@@ -1,7 +1,7 @@
 
 
 =========================================================
-Py - Git - Package : A modern template for Python Package
+Feature Generator: A package for Features Gneration
 =========================================================
 
 .. image:: https://codecov.io/gh/{{codecov_username}}/forutils/branch/master/graph/badge.svg
@@ -16,25 +16,14 @@ Py - Git - Package : A modern template for Python Package
 
 .. teaser-begin
 
-**sourcecodes** is here to make better features for forecasting purpose.
-
-
-.. epigraph::
-   This is some **awesome text** about your package!!!
-
-Go ahead use the template and create and awesome package
+**featuregen** is package that holds many common feature generating facilities for Forecasting purposes. Please read Docs to for example ussage.
 
 
 .. teaser-end
 
 .. context-begin
 
-This a python package template based on shoulder of
-
-1. `python-library-template <https://github.com/thclark/python-library-template>`_ as main pakage template created by `Tom Clark  <https://github.com/thclark>`_
-2. `Furo  <https://pradyunsg.me/furo/>`_ (Sphinx theme) for Documentation
-3. Github Pages for hosting Documentation
-4. `Pre-commit  <https://pre-commit.com/>`_ hooks for cleaning and building things before we ake any commit (Includes Sphinx Auto Doc Builds too)
+The package is built on Pure python for now. we wuld try to make most features this way.
 
 .. context-end
 
