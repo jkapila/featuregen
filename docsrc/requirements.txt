@@ -1,0 +1,7 @@
+
+# Required by the python script for building documentation
+Sphinx==3.5.1
+#sphinx-tabs==1.1.10
+sphinx-copybutton
+sphinx-inline-tabs
+furo
