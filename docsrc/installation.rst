@@ -4,14 +4,16 @@
 Installation
 ============
 
-**sourcecodes** is available on `pypi <https://pypi.org/>`_, so installation into your python virtual environment is dead
-simple:
+
+A simple ``pip install`` should work.
 
 .. code:: none
 
-    pip install sourcecodes
+    pip install featuregen
 
-Don't have a virtual environment with pip? You probably should! ``pyenv`` is your friend. Google it.
+Ideally nothing should break, but its good to create a virtual env for the use.
+
+You probably should! ``pyenv`` is your friend. Google it.
 
 
 .. _compilation:
@@ -19,9 +21,7 @@ Don't have a virtual environment with pip? You probably should! ``pyenv`` is you
 Compilation
 ============
 
-There is presently no need to compile **sourcecodes**, as it's written entirely in python.
-
-Has this changed...? If so then I dont like the color of the code block.
+There is presently no need to compile **featuregen**, as it's written entirely in python.
 
 .. _dependson:
 
@@ -33,6 +33,5 @@ Depends On
 	numpy 
 	scipy
 	pandas
-
-
+    scikit-learn
 

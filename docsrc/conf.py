@@ -56,8 +56,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'fortuils'
-copyright = u'{date.today().year} Jitin Kapila'
+project = u'featuregen'
+copyright = f'{date.today().year} Jitin Kapila'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -124,7 +124,7 @@ html_theme_options = {
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = "Py-Git-Package"
+html_title = "FeatureGen"
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 # html_short_title = None
@@ -185,7 +185,7 @@ html_show_copyright = True
 # html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'forutilsDoc'
+htmlhelp_basename = 'featuregenDoc'
 
 # -- Options for LaTeX output --------------------------------------------------
 
@@ -233,7 +233,7 @@ htmlhelp_basename = 'forutilsDoc'
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'fortuils', u'fortuils Documentation', [u'Jitin Kapila'], 1)
+    ('index', 'featuregen', u'featuregen Documentation', [u'Jitin Kapila'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -247,11 +247,11 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 
-  'fortuils', 
-  u'fortuils Documentation',
+  'featuregen', 
+  u'featuregen Documentation',
   u'Jitin Kapila', 
-  'fortuils', 
-  'Utilities for Forecasting',
+  'featuregen', 
+  'Generating Features for Forecasting',
   'Miscellaneous'),
 ]
 

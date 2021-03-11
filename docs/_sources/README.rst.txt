@@ -1,0 +1,31 @@
+
+
+=========================================================
+Feature Generator: A package for Features Gneration
+=========================================================
+
+.. image:: https://codecov.io/gh/{{codecov_username}}/forutils/branch/master/graph/badge.svg
+	  :target: https://codecov.io/gh/{{codecov_username}}/forutils
+	  :alt: Code coverage
+	  :align: right
+..  image:: https://img.shields.io/badge/code%20style-black-000000.svg
+	  :target: https://github.com/ambv/black
+	  :alt: Code Style
+	  :align: right
+
+
+.. teaser-begin
+
+**featuregen** is package that holds many common feature generating facilities for Forecasting purposes. Please read Docs to for example ussage.
+
+
+.. teaser-end
+
+.. context-begin
+
+The package is built on Pure python for now. we wuld try to make most features this way.
+
+.. context-end
+
+
+The Documentation can be found at `here. <https://jkapila.github.io/featuregen/>`_

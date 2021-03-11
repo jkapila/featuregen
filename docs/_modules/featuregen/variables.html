@@ -1,0 +1,452 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-3.5.1, furo 2021.02.21.beta25"/>
+        <title>featuregen.variables - FeatureGen</title>
+      <link rel="stylesheet" href="../../_static/styles/furo.css?digest=33d2fc4f3f180ec1ffc6524e273e21d7d58cbe49">
+    <link rel="stylesheet" href="../../_static/pygments.css">
+    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../../_static/pygments_dark.css">
+    
+
+
+<style>
+  :root {
+    --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+
+  /* For allowing end-user-specific overrides */
+  .override-light {
+    --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  
+  }
+  .override-dark {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+</style><link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" href="../../_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
+  <body dir="">
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z"/>
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">FeatureGen</div></a>
+    </div>
+    <div class="header-right">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/favicon.ico" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">FeatureGen</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html">
+  <input class="sidebar-search" placeholder=Search name="q">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">FeatureGen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../version_history.html">Version History</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/jkapila/featuregen">GitHub Repository</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+      <article role="main">
+        <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        </label>
+        <h1>Source code for featuregen.variables</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+
+<span class="c1">## Grouped Variable Transformation to transform data in various groups</span>
+<div class="viewcode-block" id="GroupedVariableTransformation"><a class="viewcode-back" href="../../api.html#featuregen.variables.GroupedVariableTransformation">[docs]</a><span class="k">class</span> <span class="nc">GroupedVariableTransformation</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    </span>
+<span class="sd">    Variable Transformation at group level</span>
+<span class="sd">    </span>
+<span class="sd">    :param key: Grouping / ID column against which aggregatoin would happen</span>
+<span class="sd">    :param target: Target column name which needs to be used for creating aggregation</span>
+<span class="sd">    :param monotone_constraints: Montonic Constraints</span>
+
+
+<span class="sd">    :param strategy: 'zscore','min-max','median-iqr', mean-iqr','median-qd',</span>
+<span class="sd">                    'median-std','median-range','mean-range','min-qd','min-iqr',</span>
+<span class="sd">                    'min','max','mean','median','std','iqr','qd','range','custom'</span>
+<span class="sd">    :param custom_func: The function should take 4 arguments</span>
+<span class="sd">                        custom_func(value,group,groups_estimates,inverse)</span>
+<span class="sd">    </span>
+<span class="sd">    """</span>
+    
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">,</span><span class="n">strategy</span><span class="o">=</span><span class="s1">'zscore'</span><span class="p">,</span><span class="n">custom_func</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">target</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">strategy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">custom_func</span> <span class="o">=</span> <span class="n">custom_func</span>
+        
+        <span class="k">def</span> <span class="nf">summary_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+            <span class="c1"># First quartile (Q1) </span>
+            <span class="n">Q1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanpercentile</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="n">interpolation</span> <span class="o">=</span> <span class="s1">'midpoint'</span><span class="p">)</span> 
+
+            <span class="c1"># Third quartile (Q3) </span>
+            <span class="n">Q3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanpercentile</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="n">interpolation</span> <span class="o">=</span> <span class="s1">'midpoint'</span><span class="p">)</span>
+
+            <span class="n">op</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">min_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">max_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">x</span><span class="p">),</span>
+                      <span class="n">mean_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">median_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">x</span><span class="p">),</span>
+                      <span class="n">std_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">range_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span>
+                      <span class="n">iqr_val</span> <span class="o">=</span> <span class="n">Q3</span><span class="o">-</span><span class="n">Q1</span><span class="p">,</span> <span class="n">qd_val</span> <span class="o">=</span> <span class="p">(</span><span class="n">Q3</span><span class="o">-</span><span class="n">Q1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="p">)</span>
+            <span class="k">return</span> <span class="n">op</span>
+            
+        <span class="bp">self</span><span class="o">.</span><span class="n">summary_func</span> <span class="o">=</span> <span class="n">summary_func</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grps</span> <span class="o">=</span> <span class="kc">None</span>
+        
+<div class="viewcode-block" id="GroupedVariableTransformation.fit"><a class="viewcode-back" href="../../api.html#featuregen.variables.GroupedVariableTransformation.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">df</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Fitting </span>
+<span class="sd">        </span>
+<span class="sd">        :param df: Pandas DataFrame</span>
+<span class="sd">        """</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">grps</span>  <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">:</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">summary_func</span><span class="p">(</span><span class="n">x</span><span class="p">)})</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()[</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]</span>
+        
+        <span class="k">return</span> <span class="bp">self</span></div>
+    
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"Variable Transformer (key=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="si">}</span><span class="s2">, target=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="si">}</span><span class="s2">, strategy=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">strategy</span><span class="si">}</span><span class="s2">)"</span>
+
+<div class="viewcode-block" id="GroupedVariableTransformation.transform"><a class="viewcode-back" href="../../api.html#featuregen.variables.GroupedVariableTransformation.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">df</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Transforming </span>
+<span class="sd">        </span>
+<span class="sd">        :param df: Pandas DataFrame</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Either </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="si">}</span><span class="s1"> or </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="si">}</span><span class="s1"> not in </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+        <span class="n">grps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grps</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'zscore'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'mean_val'</span><span class="p">])</span><span class="o">/</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'std_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'min-max'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'min_val'</span><span class="p">])</span><span class="o">/</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'range_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'median-iqr'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'median_val'</span><span class="p">])</span><span class="o">/</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'iqr_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'mean-iqr'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'mean_val'</span><span class="p">])</span><span class="o">/</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'iqr_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'median-qd'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'median_val'</span><span class="p">])</span><span class="o">/</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'qd_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'median-std'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'median_val'</span><span class="p">])</span><span class="o">/</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'std_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'median-range'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'median_val'</span><span class="p">])</span><span class="o">/</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'range_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'mean-range'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'mean_val'</span><span class="p">])</span><span class="o">/</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'range_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'min-qd'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'min_val'</span><span class="p">])</span><span class="o">/</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'qd_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'min-iqr'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'min_val'</span><span class="p">])</span><span class="o">/</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'iqr_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'min'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'min_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'max'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'max_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'mean'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'mean_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'median'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'median_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'iqr'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'iqr_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'qd'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'qd_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'std'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'std_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'range'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'range_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'custom'</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">custom_func</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">custom_func</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">grps</span><span class="p">,</span><span class="n">inverse</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+
+        <span class="k">return</span> <span class="n">X</span></div>
+    
+    <span class="k">def</span> <span class="nf">inverse_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        
+        <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="ow">or</span> <span class="n">target</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Either </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="si">}</span><span class="s1"> or </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s1"> not in </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+        <span class="n">grps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grps</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'zscore'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'std_val'</span><span class="p">]</span> <span class="o">+</span>  <span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'mean_val'</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'min-max'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'range_val'</span><span class="p">]</span> <span class="o">+</span> <span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'min_val'</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'median-iqr'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'iqr_val'</span><span class="p">]</span>  <span class="o">+</span> <span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'median_val'</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'mean-iqr'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'iqr_val'</span><span class="p">]</span> <span class="o">+</span> <span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'mean_val'</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'median-qd'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'qd_val'</span><span class="p">]</span> <span class="o">+</span> <span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'median_val'</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'median-std'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'std_val'</span><span class="p">]</span> <span class="o">+</span> <span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'median_val'</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'median-range'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'range_val'</span><span class="p">]</span> <span class="o">+</span> <span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'median_val'</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'mean-range'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'range_val'</span><span class="p">]</span> <span class="o">+</span> <span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'mean_val'</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'min-qd'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'qd_val'</span><span class="p">]</span> <span class="o">+</span> <span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'min_val'</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'min-iqr'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'iqr_val'</span><span class="p">]</span> <span class="o">+</span> <span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'min_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'min'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'min_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'max'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'max_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'mean'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'mean_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'median'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'median_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'iqr'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'iqr_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'qd'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'qd_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'std'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'std_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'range'</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">grps</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">'range_val'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s1">'custom'</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">custom_func</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">custom_func</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">grps</span><span class="p">,</span><span class="n">inverse</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+        
+        <span class="k">return</span> <span class="n">X</span></div>
+
+<span class="c1">## todo: Trended variable transformation the means and all would be treand at level of granularity of </span>
+<span class="c1">#        time (year,year month, year-week , month-week and so) given by user.</span>
+<span class="c1">## todo: Single Ungrouped Variable transformation</span>
+<span class="c1">## todo: Decomposed (series -trend -seasonality) based variabel transformation</span>
+
+
+<span class="c1">## Multiple label Encoding with easy transforms</span>
+<div class="viewcode-block" id="IndexMapper"><a class="viewcode-back" href="../../api.html#featuregen.variables.IndexMapper">[docs]</a><span class="k">class</span> <span class="nc">IndexMapper</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    
+    <span class="sd">"""</span>
+<span class="sd">    </span>
+<span class="sd">    A multi column categorical labeller </span>
+
+<span class="sd">:param categorical_columns: Columns to create Label for</span>
+<span class="sd">        :param verbose: Verbosity</span>
+<span class="sd">    """</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">categorical_columns</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cat_cols</span> <span class="o">=</span> <span class="n">categorical_columns</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose</span>
+        
+    <span class="k">def</span> <span class="nf">_idx_generator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">codes</span><span class="p">):</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">codes2idx</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">idx2codes</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">codes</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">codes2idx</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">codes2idx</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+                <span class="n">idx2codes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">k</span>
+            <span class="n">i</span> <span class="o">+=</span><span class="mi">1</span> 
+        <span class="k">return</span> <span class="n">codes2idx</span><span class="p">,</span> <span class="n">idx2codes</span>
+    
+<div class="viewcode-block" id="IndexMapper.fit"><a class="viewcode-back" href="../../api.html#featuregen.variables.IndexMapper.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">df</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Fitting </span>
+<span class="sd">        </span>
+<span class="sd">        :param df: Pandas DataFrame</span>
+<span class="sd">        """</span>
+        
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">([</span><span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cat_cols</span><span class="p">]):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Not all categorical columns </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">cat_cols</span><span class="si">}</span><span class="s1"> is in data given </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cat_cols</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">'Creating mapping for :'</span><span class="p">,</span><span class="n">col</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_make_index</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">col</span><span class="p">)</span></div>
+            
+<div class="viewcode-block" id="IndexMapper.transform"><a class="viewcode-back" href="../../api.html#featuregen.variables.IndexMapper.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Transforming </span>
+<span class="sd">        </span>
+<span class="sd">        :param df: Pandas DataFrame</span>
+<span class="sd">        """</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">inplace</span><span class="p">:</span>
+            <span class="n">sub_df</span><span class="o">=</span><span class="p">[]</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cat_cols</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">'Mapping Columns for :'</span><span class="p">,</span><span class="n">col</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">inplace</span><span class="p">:</span>
+                <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replace_code</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">col</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sub_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_replace_code</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">col</span><span class="p">))</span>
+        
+        <span class="k">return</span> <span class="n">df</span> <span class="k">if</span> <span class="n">inplace</span> <span class="k">else</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">sub_df</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></div>
+            
+    <span class="k">def</span> <span class="nf">inverse_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">inplace</span><span class="p">:</span>
+            <span class="n">sub_df</span><span class="o">=</span><span class="p">[]</span>
+        <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cat_cols</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">'Inverse Mapping Columns for :'</span><span class="p">,</span><span class="n">col</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">inplace</span><span class="p">:</span>
+                <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replace_code</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">col</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sub_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_replace_index</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">col</span><span class="p">))</span>
+        
+        <span class="k">return</span> <span class="n">df</span> <span class="k">if</span> <span class="n">inplace</span> <span class="k">else</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">sub_df</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">_make_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">df</span><span class="p">,</span><span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">'Replacing original exsisting mapping for </span><span class="si">{}</span><span class="s1"> with new data'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+            
+        <span class="n">codes</span><span class="p">,</span><span class="n">indexes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_idx_generator</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'codes'</span><span class="p">:</span><span class="n">codes</span><span class="p">,</span><span class="s1">'index'</span><span class="p">:</span><span class="n">indexes</span><span class="p">}</span>
+    
+    <span class="k">def</span> <span class="nf">_replace_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">df</span><span class="p">,</span><span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">make_index</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">code</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s1">'codes'</span><span class="p">][</span><span class="n">x</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">uint16</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s1">'codes'</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">255</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">code</span>
+    
+    <span class="k">def</span> <span class="nf">get_all_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"'</span><span class="si">{}</span><span class="s2">' not in indexed yet!"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s1">'codes'</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    
+    <span class="k">def</span> <span class="nf">get_all_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"'</span><span class="si">{}</span><span class="s2">' not in indexed yet!"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s1">'index'</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    
+    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">idx</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"'</span><span class="si">{}</span><span class="s2">' not in indexed yet!"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s1">'index'</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>
+    
+    <span class="k">def</span> <span class="nf">get_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"'</span><span class="si">{}</span><span class="s2">' not in indexed yet!"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s1">'codes'</span><span class="p">][</span><span class="n">value</span><span class="p">]</span>
+    
+    <span class="k">def</span> <span class="nf">_replace_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">df</span><span class="p">,</span><span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"'</span><span class="si">{}</span><span class="s2">' not indexed!"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+        <span class="n">code</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s1">'index'</span><span class="p">][</span><span class="n">x</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">code</span></div>
+</pre></div>
+      </article>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; {date.today().year} Jitin Kapila
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </main>
+</div>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
+</html>

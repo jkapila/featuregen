@@ -5,18 +5,43 @@ API Documentation
 =================
 
 
-.. _api_example_module:
+.. _api_module:
 
-Power Curve
+Aggregates
+===========
+    
+.. automodule:: featuregen.aggregates
+    :members:
+    :noindex:
+
+Functionals
 ===========
 
-.. automodule:: sourcecodes.example_module
+.. automodule:: featuregen.functionals
     :members:
-	
-More Example
+    :noindex:
+    
+
+Time Based Features
+===================
+    
+.. automodule:: featuregen.time_features
+    :members:
+    :noindex:
+
+
+Variable Transformation
+=======================
+    
+.. automodule:: featuregen.variables
+    :members:
+    :noindex:
+
+
+Metrics
 ============
 	
-.. autoclass:: sourcecodes.example_module
+.. automodule:: featuregen.metrics
     :members:
     :noindex:
 
@@ -25,5 +50,6 @@ More Example
 Exceptions
 ==========
 
-.. automodule:: sourcecodes.exceptions
+.. automodule:: featuregen.exceptions
     :members:
+    :noindex:

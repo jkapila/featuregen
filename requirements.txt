@@ -1,0 +1,6 @@
+# Package dependency
+# ------------------------------------------------------------------------------
+numpy
+scipy
+pandas
+scikit-learn

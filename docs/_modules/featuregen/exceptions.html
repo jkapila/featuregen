@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-3.5.1, furo 2021.02.21.beta25"/>
-        <title>sourcecodes.exceptions - fortuils: Utilities for Forecasting</title>
+        <title>featuregen.exceptions - FeatureGen</title>
       <link rel="stylesheet" href="../../_static/styles/furo.css?digest=33d2fc4f3f180ec1ffc6524e273e21d7d58cbe49">
     <link rel="stylesheet" href="../../_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../../_static/pygments_dark.css">
@@ -13,8 +13,8 @@
 
 <style>
   :root {
-    --color-code-background: #eeffcc;
-  --color-code-foreground: black;
+    --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   
   }
   @media (prefers-color-scheme: dark) {
@@ -27,8 +27,8 @@
 
   /* For allowing end-user-specific overrides */
   .override-light {
-    --color-code-background: #eeffcc;
-  --color-code-foreground: black;
+    --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
   
   }
   .override-dark {
@@ -87,7 +87,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">fortuils: Utilities for Forecasting</div></a>
+      <a href="../../index.html"><div class="brand">FeatureGen</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
@@ -98,9 +98,13 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
   
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/favicon.ico" alt="Logo"/>
+  </div>
   
+  <span class="sidebar-brand-text">FeatureGen</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html">
   <input class="sidebar-search" placeholder=Search name="q">
@@ -108,14 +112,13 @@
   <input type="hidden" name="area" value="default">
 </form><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Documentation Is all you Need</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">FeatureGen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../quick_start.html">Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">API Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../version_history.html">Version History</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../example_chapter.html">A Chapter</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/jkapila/forutils">GitHub Repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/jkapila/featuregen">GitHub Repository</a></li>
 </ul>
 
 </div>
@@ -130,15 +133,20 @@
         <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        <h1>Source code for sourcecodes.exceptions</h1><div class="highlight"><pre>
-<div class="viewcode-block" id="ExampleModuleException"><a class="viewcode-back" href="../../api.html#sourcecodes.exceptions.ExampleModuleException">[docs]</a><span></span><span class="k">class</span> <span class="nc">ExampleModuleException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-    <span class="sd">""" All exceptions raised by the library inherit from this exception</span>
+        <h1>Source code for featuregen.exceptions</h1><div class="highlight"><pre>
+<span></span>
+
+<div class="viewcode-block" id="BaseException"><a class="viewcode-back" href="../../api.html#featuregen.exceptions.BaseException">[docs]</a><span class="k">class</span> <span class="nc">BaseException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">""" Base Exception for all modules</span>
 <span class="sd">    """</span></div>
 
 
-<div class="viewcode-block" id="SomethingException"><a class="viewcode-back" href="../../api.html#sourcecodes.exceptions.SomethingException">[docs]</a><span class="k">class</span> <span class="nc">SomethingException</span><span class="p">(</span><span class="n">ExampleModuleException</span><span class="p">):</span>
-    <span class="sd">""" Raised when the code throws its toys out of the pram</span>
+<div class="viewcode-block" id="DataNotValid"><a class="viewcode-back" href="../../api.html#featuregen.exceptions.DataNotValid">[docs]</a><span class="k">class</span> <span class="nc">DataNotValid</span><span class="p">(</span><span class="ne">BaseException</span><span class="p">):</span>
+    <span class="sd">""" Raised when Data passed for aggrgation is not a valid </span>
 <span class="sd">    """</span></div>
+    
+
+    
 </pre></div>
       </article>
       <footer>

@@ -1,0 +1,466 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-3.5.1, furo 2021.02.21.beta25"/>
+        <title>featuregen.aggregates - FeatureGen</title>
+      <link rel="stylesheet" href="../../_static/styles/furo.css?digest=33d2fc4f3f180ec1ffc6524e273e21d7d58cbe49">
+    <link rel="stylesheet" href="../../_static/pygments.css">
+    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../../_static/pygments_dark.css">
+    
+
+
+<style>
+  :root {
+    --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+
+  /* For allowing end-user-specific overrides */
+  .override-light {
+    --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  
+  }
+  .override-dark {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+</style><link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" href="../../_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
+  <body dir="">
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z"/>
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">FeatureGen</div></a>
+    </div>
+    <div class="header-right">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/favicon.ico" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">FeatureGen</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html">
+  <input class="sidebar-search" placeholder=Search name="q">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">FeatureGen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../version_history.html">Version History</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/jkapila/featuregen">GitHub Repository</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+      <article role="main">
+        <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        </label>
+        <h1>Source code for featuregen.aggregates</h1><div class="highlight"><pre>
+<span></span><span class="c1"># basic imports</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># processing imports</span>
+<span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">,</span> <span class="n">clone</span>
+<span class="kn">from</span> <span class="nn">dateutil.relativedelta</span> <span class="kn">import</span> <span class="n">relativedelta</span><span class="p">,</span> <span class="n">SU</span><span class="p">,</span> <span class="n">TH</span>
+
+
+<span class="c1"># local imports</span>
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">check_value_in_array</span>
+
+<div class="viewcode-block" id="AggregateFeatures"><a class="viewcode-back" href="../../api.html#featuregen.aggregates.AggregateFeatures">[docs]</a><span class="k">class</span> <span class="nc">AggregateFeatures</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>  
+    
+    <span class="sd">"""</span>
+<span class="sd">        </span>
+<span class="sd">    Time Based Feature Aggregation for groups</span>
+<span class="sd">    </span>
+<span class="sd">    :param time_key: Date / Time column to used for creating aggregation</span>
+<span class="sd">    :param key: Grouping / ID column against which aggregatoin would happen</span>
+<span class="sd">    :param target: Target column name which needs to be used for creating aggregation</span>
+<span class="sd">    :param start_date: Start Date to create the Features</span>
+<span class="sd">    :param end_date: End Date to create the Features</span>
+<span class="sd">    :param time_aggregates: Time Granularity</span>
+<span class="sd">    :param hemisphere: Sub Levels to create encodings</span>
+<span class="sd">    :param monotone_constraints: Montonic Constraints</span>
+<span class="sd">        </span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_key</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">start_date</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">end_date</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">time_aggregates</span><span class="o">=</span><span class="p">[</span><span class="s1">'year'</span><span class="p">,</span><span class="s1">'halfyear'</span><span class="p">,</span><span class="s1">'season'</span><span class="p">,</span><span class="s1">'quarter'</span><span class="p">,</span><span class="s1">'month'</span><span class="p">,</span><span class="s1">'week'</span><span class="p">,</span><span class="s1">'year_month'</span><span class="p">,</span><span class="s1">'year_weekday'</span><span class="p">,</span>
+                                  <span class="s1">'halfyear_weekday'</span><span class="p">,</span><span class="s1">'season_weekday'</span><span class="p">,</span><span class="s1">'quarter_weekday'</span><span class="p">,</span><span class="s1">'month_weekday'</span><span class="p">,</span><span class="s1">'weekday'</span><span class="p">],</span>
+                 <span class="n">hemisphere</span> <span class="o">=</span> <span class="s1">'north'</span><span class="p">,</span>
+                 <span class="n">monotone_constraints</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">target</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">time_key</span> <span class="o">=</span> <span class="n">time_key</span>
+        
+        <span class="c1"># understand impact of start and end dates</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span> <span class="o">=</span> <span class="n">start_date</span> <span class="k">if</span> <span class="n">start_date</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">'2019-01-01'</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_date</span> <span class="o">=</span> <span class="n">end_date</span> <span class="k">if</span> <span class="n">end_date</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">'2019-12-31'</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">time_aggregates</span> <span class="o">=</span> <span class="n">time_aggregates</span>
+        <span class="c1">#self.num_seasons = num_seasons</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hemisphere</span> <span class="o">=</span> <span class="n">hemisphere</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flag</span> <span class="o">=</span> <span class="s1">'predict'</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">monotone_constraints</span> <span class="o">=</span> <span class="n">monotone_constraints</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="kc">None</span>
+
+        
+        <span class="c1"># # something for season, just a place holder as of now</span>
+        <span class="c1"># df['date_offset'] = (df.date_UTC.dt.month*100 + df.date_UTC.dt.day - 320)%1300</span>
+
+        <span class="c1"># df['season'] = pd.cut(df['date_offset'], [0, 300, 602, 900, 1300], </span>
+        <span class="c1">#               labels=['spring', 'summer', 'autumn', 'winter']</span>
+        
+    <span class="k">def</span> <span class="nf">_get_season</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">):</span>
+        
+        <span class="n">md</span> <span class="o">=</span> <span class="n">month</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="n">day</span>
+
+        <span class="k">if</span> <span class="p">((</span><span class="n">md</span> <span class="o">&gt;</span> <span class="mi">320</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">md</span> <span class="o">&lt;</span> <span class="mi">621</span><span class="p">)):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#spring</span>
+        <span class="k">elif</span> <span class="p">((</span><span class="n">md</span> <span class="o">&gt;</span> <span class="mi">620</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">md</span> <span class="o">&lt;</span> <span class="mi">923</span><span class="p">)):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">#summer</span>
+        <span class="k">elif</span> <span class="p">((</span><span class="n">md</span> <span class="o">&gt;</span> <span class="mi">922</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">md</span> <span class="o">&lt;</span> <span class="mi">1223</span><span class="p">)):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">#fall</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1">#winter</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">hemisphere</span> <span class="o">==</span> <span class="s1">'north'</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="mi">3</span>
+        <span class="k">return</span> <span class="n">s</span>
+    
+    <span class="k">def</span> <span class="nf">_get_dim</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">actual_data</span><span class="p">,</span> <span class="n">dims</span><span class="p">):</span>
+        
+        <span class="n">reference_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">added_col</span><span class="p">,</span> <span class="n">group_cols</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+        
+        <span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="n">dims</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'_'</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">dim</span> <span class="o">==</span> <span class="s1">'year'</span><span class="p">:</span>
+                <span class="n">actual_data</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span> <span class="o">=</span> <span class="n">actual_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+            
+            <span class="k">elif</span> <span class="n">dim</span> <span class="o">==</span> <span class="s1">'halfyear'</span><span class="p">:</span>
+                <span class="n">actual_data</span><span class="p">[</span><span class="s1">'halfyear'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="n">actual_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">)</span>
+            
+            <span class="k">elif</span> <span class="n">dim</span> <span class="o">==</span> <span class="s1">'season'</span><span class="p">:</span>
+                <span class="n">actual_data</span><span class="p">[</span><span class="s1">'season'</span><span class="p">]</span> <span class="o">=</span> <span class="n">actual_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_season</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">month</span><span class="p">,</span><span class="n">x</span><span class="o">.</span><span class="n">day</span><span class="p">))</span>
+                
+            <span class="k">elif</span> <span class="n">dim</span> <span class="o">==</span> <span class="s1">'quarter'</span><span class="p">:</span>
+                <span class="n">actual_data</span><span class="p">[</span><span class="s1">'quarter'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'quarter_'</span> <span class="o">+</span> <span class="n">actual_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">quarter</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'str'</span><span class="p">)</span>
+                
+            <span class="k">elif</span> <span class="n">dim</span> <span class="o">==</span> <span class="s1">'month'</span><span class="p">:</span>
+                <span class="n">actual_data</span><span class="p">[</span><span class="s1">'month'</span><span class="p">]</span> <span class="o">=</span> <span class="n">actual_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month_name</span><span class="p">()</span>
+
+            <span class="k">elif</span> <span class="n">dim</span> <span class="o">==</span> <span class="s1">'week'</span><span class="p">:</span>
+                <span class="n">actual_data</span><span class="p">[</span><span class="s1">'week'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'week_'</span> <span class="o">+</span> <span class="n">actual_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">weekofyear</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'str'</span><span class="p">)</span>
+            
+            <span class="k">elif</span> <span class="n">dim</span> <span class="o">==</span> <span class="s1">'weekday'</span><span class="p">:</span>
+                <span class="n">actual_data</span><span class="p">[</span><span class="s1">'weekday'</span><span class="p">]</span> <span class="o">=</span> <span class="n">actual_data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">actual_data</span><span class="p">,</span> <span class="kc">None</span>
+            
+            <span class="n">added_col</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
+            <span class="n">group_cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
+            
+            
+        <span class="c1"># # defining data to be grouped on </span>
+        <span class="c1"># agg = data[(data['date'] &gt;= start_date) &amp; (data['date'] &lt;= end_date)] if flag != 'predict' else self.data</span>
+
+        <span class="c1"># # definign the grouping columns, </span>
+        <span class="c1"># group_cols = ['month', 'weekday', self.key] if dim == 'weekday' else [dim, self.key]</span>
+        
+        <span class="c1"># print("Added Columns     : ",added_col)</span>
+        <span class="c1"># print("Grouping Columns  : ",group_cols)</span>
+        <span class="c1"># print("Reference Columns : ",reference_data.columns)</span>
+        <span class="c1"># print("Actual Columns    : ",actual_data.columns)</span>
+        
+        <span class="c1"># doing group by and renaming appropriately</span>
+        <span class="n">group_cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">)</span>
+        <span class="n">agg</span> <span class="o">=</span> <span class="n">reference_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">group_cols</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()[</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+        <span class="n">var_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">+</span> <span class="s1">'_'</span> <span class="o">+</span> <span class="n">dims</span>
+        <span class="n">agg</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">:</span> <span class="n">var_name</span><span class="p">},</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+        
+<span class="c1">#         print('Added Cols:',added_col,' grouping cols:',group_cols)</span>
+<span class="c1">#         print(agg.head())</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">monotone_constraints</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">var_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span><span class="p">[</span><span class="n">var_name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        
+        <span class="c1"># merging with data</span>
+        <span class="n">agg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">actual_data</span><span class="p">,</span> <span class="n">agg</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="n">group_cols</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">'left'</span><span class="p">)</span>
+        <span class="n">agg</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">added_col</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">agg</span><span class="p">,</span> <span class="n">var_name</span>
+    
+<div class="viewcode-block" id="AggregateFeatures.fit"><a class="viewcode-back" href="../../api.html#featuregen.aggregates.AggregateFeatures.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        </span>
+<span class="sd">        Assumption before fetching data in fit:</span>
+<span class="sd">        1) Time columns is named as date and it is in datetime format of pandas</span>
+<span class="sd">        2) Grouper and Target column are present in data</span>
+<span class="sd">        3) There are no NAs as of now and all preprocesing to this is done in prior</span>
+<span class="sd">        </span>
+<span class="sd">        :param X: pandas Data Frame</span>
+<span class="sd">        """</span>
+        
+        <span class="n">nas</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">nas</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Data Frame with NAs is not allowed to be processed. Please the data. '</span><span class="p">,</span> <span class="n">nas</span><span class="p">)</span>
+        
+        <span class="n">cols</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">check_value_in_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">,</span><span class="n">cols</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">check_value_in_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">cols</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">check_value_in_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">,</span><span class="n">cols</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Either </span><span class="si">{}</span><span class="s2"> or </span><span class="si">{}</span><span class="s2"> or </span><span class="si">{}</span><span class="s2"> not available in </span><span class="si">{}</span><span class="s2"> "</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">,</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+        
+        <span class="c1"># assigning data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">X</span><span class="p">[(</span><span class="n">X</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_date</span><span class="p">)]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">],</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+        
+        <span class="c1"># Addign features</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">'year'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">'halfyear'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">'season'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_season</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">month</span><span class="p">,</span><span class="n">x</span><span class="o">.</span><span class="n">day</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">'quarter'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'quarter_'</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">quarter</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'str'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">'month'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month_name</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">'week'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'week_'</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">weekofyear</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'str'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">'weekday'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Agreagate Features would build from </span><span class="se">\n</span><span class="s1">Shape: </span><span class="si">{}</span><span class="s1"> Columns:</span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">features</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="AggregateFeatures.transform"><a class="viewcode-back" href="../../api.html#featuregen.aggregates.AggregateFeatures.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">flag</span><span class="o">=</span><span class="s1">'predict'</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Transforming </span>
+<span class="sd">        </span>
+<span class="sd">        :param X: Pandas DataFrame</span>
+<span class="sd">        """</span>
+        
+        <span class="n">added_features</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_aggregates</span><span class="p">:</span>
+            <span class="n">X</span><span class="p">,</span> <span class="n">var_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_dim</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">dim</span><span class="p">)</span>
+            <span class="n">added_features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">var_name</span><span class="p">)</span>
+        
+        <span class="c1">#X = X[~X.isnull().any(1)]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Added Features : '</span><span class="p">,</span> <span class="n">added_features</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Post Transforming with Aggregate Features data shape is:'</span><span class="p">,</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">start_date</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[(</span><span class="n">X</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">start_date</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">end_date</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="n">X</span></div></div>
+
+<span class="c1"># Features which are smaller thatn the key but are not directly mapped in data</span>
+<div class="viewcode-block" id="SubLevelFeatures"><a class="viewcode-back" href="../../api.html#featuregen.aggregates.SubLevelFeatures">[docs]</a><span class="k">class</span> <span class="nc">SubLevelFeatures</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>  
+    
+        
+    <span class="sd">"""</span>
+<span class="sd">        </span>
+<span class="sd">    Group wise Sub-Group Level features acting as embeddings for groups. </span>
+<span class="sd">    </span>
+<span class="sd">    :param date_key: Date / Time column to used for creating aggregation</span>
+<span class="sd">    :param key: Grouping / ID column against which aggregatoin would happen</span>
+<span class="sd">    :param target: Target column name which needs to be used for creating aggregation</span>
+<span class="sd">    :param start_date: Start Date to create the Features</span>
+<span class="sd">    :param end_date: End Date to create the Features</span>
+<span class="sd">    :param granularity: Time Granularity</span>
+<span class="sd">    :param sub_levels: Sub Levels to create encodings</span>
+<span class="sd">    :param factor_cutoff: Factor Cutoff</span>
+<span class="sd">    :param encode_type: Encoding</span>
+<span class="sd">    :param monotone_constraints: Montonic Constraints</span>
+<span class="sd">        </span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">date_key</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">start_date</span> <span class="o">=</span> <span class="s1">'2019-01-01'</span><span class="p">,</span> <span class="n">end_date</span> <span class="o">=</span> <span class="s1">'2019-12-31'</span><span class="p">,</span>
+                 <span class="n">granularity</span><span class="o">=</span><span class="s1">'yearly'</span><span class="p">,</span>
+                 <span class="n">sub_levels</span><span class="o">=</span><span class="p">[</span><span class="s1">'size'</span><span class="p">],</span>
+                 <span class="n">factor_cutoff</span> <span class="o">=</span> <span class="mf">0.003</span><span class="p">,</span>
+                 <span class="n">encode_type</span> <span class="o">=</span> <span class="s1">'none'</span><span class="p">,</span>
+                 <span class="n">monotone_constraints</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">target</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span> 
+        
+        <span class="c1"># understand impact of start and end dates</span>
+        <span class="c1"># this would be used in case we are using higher hierarchy in play</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span> <span class="o">=</span> <span class="n">start_date</span> <span class="k">if</span> <span class="n">start_date</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">'2019-01-01'</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_date</span> <span class="o">=</span> <span class="n">end_date</span> <span class="k">if</span> <span class="n">end_date</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s1">'2019-12-31'</span>
+        
+        <span class="c1">#granularity of these levels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">granularity</span> <span class="o">=</span> <span class="n">granularity</span>
+        
+        <span class="c1"># product features to extract</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">product_levels</span> <span class="o">=</span> <span class="n">product_levels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color_cutoff</span> <span class="o">=</span> <span class="n">color_cutoff</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">encode_type</span> <span class="o">=</span> <span class="s1">'one-hot'</span> <span class="c1"># only option as of now</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">monotone_constraints</span> <span class="o">=</span> <span class="n">monotone_constraints</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="kc">None</span>
+        
+        
+    <span class="k">def</span> <span class="nf">_get_pct_by_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">dim</span><span class="p">):</span>
+        <span class="n">c</span> <span class="o">=</span>  <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">dim</span><span class="p">])[</span><span class="s1">'reference'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">"count"</span><span class="p">)</span>
+        <span class="c1"># # (c / c.groupby(level=[0]).transform("sum")).reset_index()</span>
+        <span class="n">df_pct</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot</span><span class="p">((</span><span class="n">c</span> <span class="o">/</span> <span class="n">c</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s2">"sum"</span><span class="p">))</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(),</span> <span class="n">index</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">dim</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">'count'</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">df_pct</span><span class="o">.</span><span class="n">columns</span><span class="o">=</span> <span class="p">[</span><span class="n">dim</span> <span class="o">+</span> <span class="s2">"_"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span><span class="s1">'_'</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df_pct</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">ravel</span><span class="p">()]</span>
+        <span class="k">return</span> <span class="n">df_pct</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<div class="viewcode-block" id="SubLevelFeatures.fit"><a class="viewcode-back" href="../../api.html#featuregen.aggregates.SubLevelFeatures.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">X</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        
+        <span class="sd">"""</span>
+<span class="sd">        :param X: Pandas DataFrame</span>
+<span class="sd">        """</span>
+        
+        <span class="n">df</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">'reference'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        
+        <span class="c1"># creating the product features above the key value:</span>
+        <span class="n">fin_df</span>  <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'category_desc'</span><span class="p">,</span><span class="s1">'dept_desc'</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">'reference'</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'reference'</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        
+        <span class="c1">## adding percentage components for each class</span>
+        <span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">product_levels</span><span class="p">:</span>
+            <span class="n">fin_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">fin_df</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_pct_by_class</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">dim</span><span class="p">),</span> <span class="n">on</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'outer'</span><span class="p">)</span>
+        <span class="n">fin_df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Product Features Created with shape </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fin_df</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">fin_df</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">features</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">monotone_constraints</span><span class="p">:</span>
+<span class="c1">#             for col in slef.product_levels:</span>
+            <span class="k">for</span> <span class="n">feat</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">feat</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="nb">any</span><span class="p">([</span><span class="n">feat</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">col</span><span class="p">)</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">product_levels</span><span class="p">]):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span><span class="p">[</span><span class="n">feat</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="k">elif</span> <span class="n">feat</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">time_key</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">constraints</span><span class="p">[</span><span class="n">feat</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">return</span> <span class="bp">self</span></div>
+    
+<div class="viewcode-block" id="SubLevelFeatures.transform"><a class="viewcode-back" href="../../api.html#featuregen.aggregates.SubLevelFeatures.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">flag</span> <span class="o">=</span> <span class="s1">'predict'</span><span class="p">):</span>
+        <span class="sd">"""</span>
+<span class="sd">        Transforming </span>
+<span class="sd">        </span>
+<span class="sd">        :param X: Pandas DataFrame</span>
+<span class="sd">        """</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'</span><span class="si">{}</span><span class="s1"> not found in input data. Columns </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+        
+        <span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Added Features : '</span><span class="p">,</span> <span class="p">[</span><span class="n">feat</span> <span class="k">for</span> <span class="n">feat</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">features</span> <span class="k">if</span> <span class="n">feat</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Post Transforming with Product Features data shape is:'</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">X</span></div></div>
+        
+    
+        
+</pre></div>
+      </article>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; {date.today().year} Jitin Kapila
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </main>
+</div>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
+</html>

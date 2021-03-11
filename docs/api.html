@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="License" href="license.html" /><link rel="prev" title="Quick Start" href="quick_start.html" />
 
     <link rel="shortcut icon" href="_static/favicon.ico"/><meta name="generator" content="sphinx-3.5.1, furo 2021.02.21.beta25"/>
-        <title>API Documentation - Py-Git-Package</title>
+        <title>API Documentation - FeatureGen</title>
       <link rel="stylesheet" href="_static/styles/furo.css?digest=33d2fc4f3f180ec1ffc6524e273e21d7d58cbe49">
     <link rel="stylesheet" href="_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
@@ -87,7 +87,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Py-Git-Package</div></a>
+      <a href="index.html"><div class="brand">FeatureGen</div></a>
     </div>
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
@@ -104,7 +104,7 @@
     <img class="sidebar-logo" src="_static/favicon.ico" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Py-Git-Package</span>
+  <span class="sidebar-brand-text">FeatureGen</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html">
   <input class="sidebar-search" placeholder=Search name="q">
@@ -112,14 +112,13 @@
   <input type="hidden" name="area" value="default">
 </form><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="index.html">Py-Git-Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">FeatureGen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start.html">Quick Start</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">API Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="version_history.html">Version History</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example_chapter.html">A Chapter</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/jkapila/py-git-package">GitHub Repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/jkapila/featuregen">GitHub Repository</a></li>
 </ul>
 
 </div>
@@ -136,62 +135,396 @@
         </label>
         <div class="section" id="api-documentation">
 <span id="api"></span><h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-sourcecodes.example_module">
-<span id="power-curve"></span><span id="api-example-module"></span><h2>Power Curve<a class="headerlink" href="#module-sourcecodes.example_module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="aggregates">
+<span id="api-module"></span><h2>Aggregates<a class="headerlink" href="#aggregates" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="sourcecodes.example_module.ExampleModule">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">sourcecodes.example_module.</span></code><code class="sig-name descname"><span class="pre">ExampleModule</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sourcecodes/example_module.html#ExampleModule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sourcecodes.example_module.ExampleModule" title="Permalink to this definition">¶</a></dt>
-<dd><p>Some documentation about the class.</p>
-<p>It’ll get rendered in the auto generated docs. If Kanye could see this he’d rap about how great it is.</p>
-<dl class="py method">
-<dt id="sourcecodes.example_module.ExampleModule.example_error_handling_and_logging">
-<code class="sig-name descname"><span class="pre">example_error_handling_and_logging</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thing</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sourcecodes/example_module.html#ExampleModule.example_error_handling_and_logging"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sourcecodes.example_module.ExampleModule.example_error_handling_and_logging" title="Permalink to this definition">¶</a></dt>
-<dd><p>Method to show how to handle an error</p>
-</dd></dl>
-<dl class="py method">
-<dt id="sourcecodes.example_module.ExampleModule.example_method">
-<code class="sig-name descname"><span class="pre">example_method</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">example_arg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">example_kwarg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sourcecodes/example_module.html#ExampleModule.example_method"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sourcecodes.example_module.ExampleModule.example_method" title="Permalink to this definition">¶</a></dt>
-<dd><p>A public method to show parameter stuff in docstrings</p>
+<dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">featuregen.aggregates.</span></code><code class="sig-name descname"><span class="pre">AggregateFeatures</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_aggregates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['year',</span> <span class="pre">'halfyear',</span> <span class="pre">'season',</span> <span class="pre">'quarter',</span> <span class="pre">'month',</span> <span class="pre">'week',</span> <span class="pre">'year_month',</span> <span class="pre">'year_weekday',</span> <span class="pre">'halfyear_weekday',</span> <span class="pre">'season_weekday',</span> <span class="pre">'quarter_weekday',</span> <span class="pre">'month_weekday',</span> <span class="pre">'weekday']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hemisphere</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'north'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monotone_constraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/aggregates.html#AggregateFeatures"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Time Based Feature Aggregation for groups</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>example_arg</strong> – Document the function parameter</p></li>
-<li><p><strong>example_kwarg</strong> – Document the function parameter</p></li>
+<li><p><strong>time_key</strong> – Date / Time column to used for creating aggregation</p></li>
+<li><p><strong>key</strong> – Grouping / ID column against which aggregatoin would happen</p></li>
+<li><p><strong>target</strong> – Target column name which needs to be used for creating aggregation</p></li>
+<li><p><strong>start_date</strong> – Start Date to create the Features</p></li>
+<li><p><strong>end_date</strong> – End Date to create the Features</p></li>
+<li><p><strong>time_aggregates</strong> – Time Granularity</p></li>
+<li><p><strong>hemisphere</strong> – Sub Levels to create encodings</p></li>
+<li><p><strong>monotone_constraints</strong> – Montonic Constraints</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>None</p>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">fit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/aggregates.html#AggregateFeatures.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Assumption before fetching data in fit:
+1) Time columns is named as date and it is in datetime format of pandas
+2) Grouper and Target column are present in data
+3) There are no NAs as of now and all preprocesing to this is done in prior</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> – pandas Data Frame</p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt id="sourcecodes.example_module.ExampleModule.example_of_how_to_refer_to_a_file_in_the_package">
-<code class="sig-name descname"><span class="pre">example_of_how_to_refer_to_a_file_in_the_package</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sourcecodes/example_module.html#ExampleModule.example_of_how_to_refer_to_a_file_in_the_package"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sourcecodes.example_module.ExampleModule.example_of_how_to_refer_to_a_file_in_the_package" title="Permalink to this definition">¶</a></dt>
-<dd><p>Method showing how to reference files within the package</p>
-<p>You need to refer to the file in the package bundle, because you don’t know where the
-module will be called from… this gets you the right path always, relative to sourcecodes</p>
-<p>Don’t forget to include non-python files in the MANIFEST.in too!</p>
+<dt>
+<code class="sig-name descname"><span class="pre">transform</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'predict'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/aggregates.html#AggregateFeatures.transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Transforming</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> – Pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">featuregen.aggregates.</span></code><code class="sig-name descname"><span class="pre">SubLevelFeatures</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2019-01-01'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2019-12-31'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">granularity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'yearly'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_levels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['size']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor_cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.003</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encode_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'none'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monotone_constraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/aggregates.html#SubLevelFeatures"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Group wise Sub-Group Level features acting as embeddings for groups.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>date_key</strong> – Date / Time column to used for creating aggregation</p></li>
+<li><p><strong>key</strong> – Grouping / ID column against which aggregatoin would happen</p></li>
+<li><p><strong>target</strong> – Target column name which needs to be used for creating aggregation</p></li>
+<li><p><strong>start_date</strong> – Start Date to create the Features</p></li>
+<li><p><strong>end_date</strong> – End Date to create the Features</p></li>
+<li><p><strong>granularity</strong> – Time Granularity</p></li>
+<li><p><strong>sub_levels</strong> – Sub Levels to create encodings</p></li>
+<li><p><strong>factor_cutoff</strong> – Factor Cutoff</p></li>
+<li><p><strong>encode_type</strong> – Encoding</p></li>
+<li><p><strong>monotone_constraints</strong> – Montonic Constraints</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">fit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/aggregates.html#SubLevelFeatures.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> – Pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">transform</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'predict'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/aggregates.html#SubLevelFeatures.transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Transforming</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> – Pandas DataFrame</p>
+</dd>
+</dl>
 </dd></dl>
 </dd></dl>
 </div>
-<div class="section" id="more-example">
-<h2>More Example<a class="headerlink" href="#more-example" title="Permalink to this headline">¶</a></h2>
-<dl class="py attribute">
+<div class="section" id="functionals">
+<h2>Functionals<a class="headerlink" href="#functionals" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
 <dt>
-<code class="sig-prename descclassname"><span class="pre">sourcecodes.</span></code><code class="sig-name descname"><span class="pre">example_module</span></code></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">featuregen.functionals.</span></code><code class="sig-name descname"><span class="pre">CartesianProduct</span></code><a class="reference internal" href="_modules/featuregen/functionals.html#CartesianProduct"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Creating a Cartesian product for data</p>
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">fit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/functionals.html#CartesianProduct.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> – Pandas data frame to be used for cartesion</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">transform</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'predict'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/functionals.html#CartesianProduct.transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Transforming</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> – Pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">featuregen.functionals.</span></code><code class="sig-name descname"><span class="pre">TrainingFeatures</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'date'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/functionals.html#TrainingFeatures"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Finalizing Features from data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> – Target attribute</p></li>
+<li><p><strong>date_col</strong> – Date Column</p></li>
+<li><p><strong>drop_features</strong> – Features to drop from Training</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">fit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/functionals.html#TrainingFeatures.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Fitting</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> – Pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">transform</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/functionals.html#TrainingFeatures.transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Transforming</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> – Pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</div>
+<div class="section" id="time-based-features">
+<h2>Time Based Features<a class="headerlink" href="#time-based-features" title="Permalink to this headline">¶</a></h2>
+<p>File for generating and dealing with Holiday and time related features</p>
+<dl class="py class">
+<dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">featuregen.time_features.</span></code><code class="sig-name descname"><span class="pre">CalendarFeatures</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expand_days</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monotone_constraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/time_features.html#CalendarFeatures"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Calendar features based on dates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_key</strong> – Date / Time column to used for creating aggregation</p></li>
+<li><p><strong>key</strong> – Grouping / ID column against which aggregatoin would happen</p></li>
+<li><p><strong>target</strong> – Target column name which needs to be used for creating aggregation</p></li>
+<li><p><strong>start_date</strong> – Start Date to create the Features</p></li>
+<li><p><strong>end_date</strong> – End Date to create the Features</p></li>
+<li><p><strong>expand_days</strong> – expand the days to one hot or not</p></li>
+<li><p><strong>monotone_constraints</strong> – Montonic Constraints</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">fit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/time_features.html#CalendarFeatures.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Fitting</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> – None and has no impact</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">transform</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'predict'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/time_features.html#CalendarFeatures.transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Transforming</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> – Pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">featuregen.time_features.</span></code><code class="sig-name descname"><span class="pre">HolidayAndEventFeatures</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">holidays</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">impact_window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expand_holiday</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expand_lower</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expand_upper</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indicator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'value'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monotone_constraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/time_features.html#HolidayAndEventFeatures"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Time Based Feature Aggregation for groups</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_key</strong> – Date / Time column to used for creating aggregation</p></li>
+<li><p><strong>start_date</strong> – Start Date to create the Features</p></li>
+<li><p><strong>holidays</strong> – List of all holidays to be created</p></li>
+<li><p><strong>impact_window</strong> – To create holiday ipact range or not</p></li>
+<li><p><strong>lower_window</strong> – Lower limit of impact range</p></li>
+<li><p><strong>upper_window</strong> – Upper limit of impact range</p></li>
+<li><p><strong>expand_holiday</strong> – Expand Holidays to one hot columns</p></li>
+<li><p><strong>expand_lower</strong> – Expand Lower impact range to one hot columns</p></li>
+<li><p><strong>expand_upper</strong> – Expand Upper impcat range  to one hot columns</p></li>
+<li><p><strong>indicator</strong> – Indicator as ‘value’</p></li>
+<li><p><strong>verbose</strong> – Verbosity</p></li>
+<li><p><strong>monotone_constraints</strong> – Montonic Constraints</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">fit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/time_features.html#HolidayAndEventFeatures.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Fitting</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> – None and has no impact</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">transform</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/time_features.html#HolidayAndEventFeatures.transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Transforming</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> – Pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">featuregen.time_features.</span></code><code class="sig-name descname"><span class="pre">LagFeatures</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monotone_constraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/time_features.html#LagFeatures"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Lags for Target variable Of Groups</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_key</strong> – Date / Time column to used for creating aggregation</p></li>
+<li><p><strong>key</strong> – Grouping / ID column against which aggregatoin would happen</p></li>
+<li><p><strong>target</strong> – Target column name which needs to be used for creating aggregation</p></li>
+<li><p><strong>start_date</strong> – Start Date to create the Features</p></li>
+<li><p><strong>end_date</strong> – End Date to create the Features</p></li>
+<li><p><strong>lags</strong> – list of lags to be created</p></li>
+<li><p><strong>monotone_constraints</strong> – Montonic Constraint</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">fit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/time_features.html#LagFeatures.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Assumption before fetching data in fit:
+1) Time columns is named as date and it is in datetime format of pandas
+2) Grouper and Target column are present in data
+3) There are no NAs as of now and all preprocesing to this is done in prior</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> – pandas Data Frame</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">transform</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'predict'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/time_features.html#LagFeatures.transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Transforming</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> – Pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">featuregen.time_features.</span></code><code class="sig-name descname"><span class="pre">USTradingCalendar</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rules</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/time_features.html#USTradingCalendar"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd></dd></dl>
 </div>
-<div class="section" id="module-sourcecodes.exceptions">
-<span id="exceptions"></span><span id="api-exceptions"></span><h2>Exceptions<a class="headerlink" href="#module-sourcecodes.exceptions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="variable-transformation">
+<h2>Variable Transformation<a class="headerlink" href="#variable-transformation" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">featuregen.variables.</span></code><code class="sig-name descname"><span class="pre">GroupedVariableTransformation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'zscore'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/variables.html#GroupedVariableTransformation"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Variable Transformation at group level</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> – Grouping / ID column against which aggregatoin would happen</p></li>
+<li><p><strong>target</strong> – Target column name which needs to be used for creating aggregation</p></li>
+<li><p><strong>monotone_constraints</strong> – Montonic Constraints</p></li>
+<li><p><strong>strategy</strong> – ‘zscore’,’min-max’,’median-iqr’, mean-iqr’,’median-qd’,
+‘median-std’,’median-range’,’mean-range’,’min-qd’,’min-iqr’,
+‘min’,’max’,’mean’,’median’,’std’,’iqr’,’qd’,’range’,’custom’</p></li>
+<li><p><strong>custom_func</strong> – The function should take 4 arguments
+custom_func(value,group,groups_estimates,inverse)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">fit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/variables.html#GroupedVariableTransformation.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Fitting</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> – Pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">transform</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/variables.html#GroupedVariableTransformation.transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Transforming</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> – Pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">featuregen.variables.</span></code><code class="sig-name descname"><span class="pre">IndexMapper</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">categorical_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/variables.html#IndexMapper"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><blockquote>
+<div><p>A multi column categorical labeller</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>categorical_columns</strong> – Columns to create Label for
+:param verbose: Verbosity</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">fit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/variables.html#IndexMapper.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Fitting</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> – Pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">transform</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/variables.html#IndexMapper.transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Transforming</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> – Pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</div>
+<div class="section" id="metrics">
+<h2>Metrics<a class="headerlink" href="#metrics" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">featuregen.metrics.</span></code><code class="sig-name descname"><span class="pre">SummarizeRegression</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/metrics.html#SummarizeRegression"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><dl class="simple">
+<dt>Regression Summary Class</dt><dd><dl class="field-list simple">
+<dt class="field-odd">param date_key</dt>
+<dd class="field-odd"><p>Date column</p>
+</dd>
+<dt class="field-even">param key</dt>
+<dd class="field-even"><p>Group / ID columns</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">summarize</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actual_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predicted_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/featuregen/metrics.html#SummarizeRegression.summarize"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Summarizing</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> – Pandas DataFrame with keys and predictions</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</div>
+<div class="section" id="exceptions">
+<span id="api-exceptions"></span><h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
 <dl class="py exception">
-<dt id="sourcecodes.exceptions.ExampleModuleException">
-<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">sourcecodes.exceptions.</span></code><code class="sig-name descname"><span class="pre">ExampleModuleException</span></code><a class="reference internal" href="_modules/sourcecodes/exceptions.html#ExampleModuleException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sourcecodes.exceptions.ExampleModuleException" title="Permalink to this definition">¶</a></dt>
-<dd><p>All exceptions raised by the library inherit from this exception</p>
+<dt>
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">featuregen.exceptions.</span></code><code class="sig-name descname"><span class="pre">BaseException</span></code><a class="reference internal" href="_modules/featuregen/exceptions.html#BaseException"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Base Exception for all modules</p>
 </dd></dl>
 <dl class="py exception">
-<dt id="sourcecodes.exceptions.SomethingException">
-<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">sourcecodes.exceptions.</span></code><code class="sig-name descname"><span class="pre">SomethingException</span></code><a class="reference internal" href="_modules/sourcecodes/exceptions.html#SomethingException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sourcecodes.exceptions.SomethingException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Raised when the code throws its toys out of the pram</p>
+<dt>
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">featuregen.exceptions.</span></code><code class="sig-name descname"><span class="pre">DataNotValid</span></code><a class="reference internal" href="_modules/featuregen/exceptions.html#DataNotValid"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Raised when Data passed for aggrgation is not a valid</p>
 </dd></dl>
 </div>
 </div>
@@ -223,7 +556,7 @@ module will be called from… this gets you the right path always, relative to s
         </div>
 
         <div class="related-information">
-              Copyright &#169; {date.today().year} Jitin Kapila
+              Copyright &#169; 2021 Jitin Kapila
         </div>
         
       </footer>
@@ -241,9 +574,12 @@ module will be called from… this gets you the right path always, relative to s
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">API Documentation</a><ul>
-<li><a class="reference internal" href="#module-sourcecodes.example_module">Power Curve</a></li>
-<li><a class="reference internal" href="#more-example">More Example</a></li>
-<li><a class="reference internal" href="#module-sourcecodes.exceptions">Exceptions</a></li>
+<li><a class="reference internal" href="#aggregates">Aggregates</a></li>
+<li><a class="reference internal" href="#functionals">Functionals</a></li>
+<li><a class="reference internal" href="#time-based-features">Time Based Features</a></li>
+<li><a class="reference internal" href="#variable-transformation">Variable Transformation</a></li>
+<li><a class="reference internal" href="#metrics">Metrics</a></li>
+<li><a class="reference internal" href="#exceptions">Exceptions</a></li>
 </ul>
 </li>
 </ul>

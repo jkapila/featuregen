@@ -3,6 +3,10 @@
 # Library dependencies should be specified in setup.py with as wide a
 # version range as possible, for maximum compatibility with other tools
 
+# Package Development Dependency
+# ------------------------------------------------------------------------------
+-r requirements.txt
+
 # Testing
 # ------------------------------------------------------------------------------
 tox

@@ -28,4 +28,4 @@ The package is built on Pure python for now. we wuld try to make most features t
 .. context-end
 
 
-The Documentation can be found at `here. <https://jkapila.github.io/py-git-package/>`_
+The Documentation can be found at `here. <https://jkapila.github.io/featuregen/>`_
