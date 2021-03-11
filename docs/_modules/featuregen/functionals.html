@@ -134,127 +134,126 @@
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
         <h1>Source code for featuregen.functionals</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">,</span> <span class="n">clone</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
+<span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">,</span> <span class="n">clone</span>
 <span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">VarianceThreshold</span>
+
 
 <div class="viewcode-block" id="CartesianProduct"><a class="viewcode-back" href="../../api.html#featuregen.functionals.CartesianProduct">[docs]</a><span class="k">class</span> <span class="nc">CartesianProduct</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
     <span class="sd">"""</span>
-<span class="sd">    </span>
+
 <span class="sd">    Creating a Cartesian product for data</span>
-<span class="sd">    </span>
+
 <span class="sd">    """</span>
-    
+
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">multiplier_df</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">multiplier_dtypes</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">flag</span> <span class="o">=</span> <span class="kc">None</span>
-    
+
     <span class="k">def</span> <span class="nf">_cartesian_product_simplified</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">dtypes</span><span class="p">):</span>
-        <span class="n">la</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">left</span><span class="p">)</span> 
+        <span class="n">la</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">left</span><span class="p">)</span>
         <span class="n">lb</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
-        <span class="n">ia2</span><span class="p">,</span> <span class="n">ib2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_arrays</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ogrid</span><span class="p">[:</span><span class="n">la</span><span class="p">,:</span><span class="n">lb</span><span class="p">])</span>
+        <span class="n">ia2</span><span class="p">,</span> <span class="n">ib2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_arrays</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ogrid</span><span class="p">[:</span><span class="n">la</span><span class="p">,</span> <span class="p">:</span><span class="n">lb</span><span class="p">])</span>
         <span class="n">columns</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">+</span> <span class="n">right</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
-            <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">left</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">ia2</span><span class="o">.</span><span class="n">ravel</span><span class="p">()],</span> <span class="n">right</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">ib2</span><span class="o">.</span><span class="n">ravel</span><span class="p">()]]),</span><span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">left</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">ia2</span><span class="o">.</span><span class="n">ravel</span><span class="p">()],</span> <span class="n">right</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">ib2</span><span class="o">.</span><span class="n">ravel</span><span class="p">()]]),</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
         <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtypes</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">df</span>
-        
-<div class="viewcode-block" id="CartesianProduct.fit"><a class="viewcode-back" href="../../api.html#featuregen.functionals.CartesianProduct.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        
+
+<div class="viewcode-block" id="CartesianProduct.fit"><a class="viewcode-back" href="../../api.html#featuregen.functionals.CartesianProduct.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
         <span class="sd">"""</span>
-<span class="sd">        :param X: Pandas data frame to be used for cartesion </span>
+<span class="sd">        :param X: Pandas data frame to be used for cartesion</span>
 <span class="sd">        """</span>
-        
+
         <span class="c1"># do nothing</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">multiplier_df</span> <span class="o">=</span> <span class="n">X</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">multiplier_dtypes</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">dtypes</span>
 
         <span class="k">return</span> <span class="bp">self</span></div>
-    
-<div class="viewcode-block" id="CartesianProduct.transform"><a class="viewcode-back" href="../../api.html#featuregen.functionals.CartesianProduct.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">flag</span> <span class="o">=</span> <span class="s1">'predict'</span><span class="p">):</span>
+
+<div class="viewcode-block" id="CartesianProduct.transform"><a class="viewcode-back" href="../../api.html#featuregen.functionals.CartesianProduct.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">flag</span><span class="o">=</span><span class="s2">"predict"</span><span class="p">):</span>
         <span class="sd">"""</span>
-<span class="sd">        Transforming </span>
-<span class="sd">        </span>
+<span class="sd">        Transforming</span>
+
 <span class="sd">        :param X: Pandas DataFrame</span>
 <span class="sd">        """</span>
-        
+
         <span class="bp">self</span><span class="o">.</span><span class="n">flag</span> <span class="o">=</span> <span class="n">flag</span>
         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">multiplier_df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-            
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">flag</span> <span class="o">==</span> <span class="s1">'predict'</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">flag</span> <span class="o">==</span> <span class="s2">"predict"</span><span class="p">:</span>
             <span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cartesian_product_simplified</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">dtypes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dtypes</span><span class="p">))</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">'Added Features : '</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">multiplier_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">'Post Transforming with Cartesian Multiplied Features data shape is:'</span><span class="p">,</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Added Features : "</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">multiplier_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Post Transforming with Cartesian Multiplied Features data shape is:"</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">df</span> <span class="o">=</span> <span class="n">X</span>
         <span class="k">return</span> <span class="n">df</span></div></div>
-    
-    
-<div class="viewcode-block" id="TrainingFeatures"><a class="viewcode-back" href="../../api.html#featuregen.functionals.TrainingFeatures">[docs]</a><span class="k">class</span> <span class="nc">TrainingFeatures</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span><span class="n">TransformerMixin</span><span class="p">):</span>
-    
+
+
+<div class="viewcode-block" id="TrainingFeatures"><a class="viewcode-back" href="../../api.html#featuregen.functionals.TrainingFeatures">[docs]</a><span class="k">class</span> <span class="nc">TrainingFeatures</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
+
     <span class="sd">"""</span>
-<span class="sd">    </span>
+
 <span class="sd">    Finalizing Features from data</span>
-<span class="sd">    </span>
+
 <span class="sd">    :param target: Target attribute</span>
 <span class="sd">    :param date_col: Date Column</span>
 <span class="sd">    :param drop_features: Features to drop from Training</span>
-<span class="sd">    </span>
+
 <span class="sd">    """</span>
-    
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span><span class="n">date_col</span><span class="o">=</span><span class="s1">'date'</span><span class="p">,</span><span class="n">drop_features</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">date_col</span><span class="o">=</span><span class="s2">"date"</span><span class="p">,</span> <span class="n">drop_features</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">features</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">target</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">date_col</span> <span class="o">=</span> <span class="n">date_col</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">drop_features</span> <span class="o">=</span> <span class="n">drop_features</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">drop_features</span><span class="p">,</span><span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">drop_features</span><span class="p">]</span>
-    
+        <span class="bp">self</span><span class="o">.</span><span class="n">drop_features</span> <span class="o">=</span> <span class="n">drop_features</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">drop_features</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">drop_features</span><span class="p">]</span>
+
 <div class="viewcode-block" id="TrainingFeatures.fit"><a class="viewcode-back" href="../../api.html#featuregen.functionals.TrainingFeatures.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
         <span class="sd">"""</span>
-<span class="sd">        Fitting  </span>
-<span class="sd">        </span>
+<span class="sd">        Fitting</span>
+
 <span class="sd">        :param X: Pandas DataFrame</span>
 <span class="sd">        """</span>
-        
-        <span class="c1">#Remove features with 0 variance</span>
+
+        <span class="c1"># Remove features with 0 variance</span>
         <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="o">~</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">drop_features</span><span class="p">)]]</span>
         <span class="n">X</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="n">constant_filter</span> <span class="o">=</span> <span class="n">VarianceThreshold</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
         <span class="n">constant_filter</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
         <span class="n">constant_columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">constant_filter</span><span class="o">.</span><span class="n">variances_</span> <span class="o">==</span> <span class="mi">0</span><span class="p">])</span>
-        
+
         <span class="nb">print</span><span class="p">(</span><span class="s2">"Constant Features: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">constant_columns</span><span class="p">))</span>
-        
+
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">constant_columns</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
             <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">constant_columns</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-                  
-        <span class="c1">#Remove duplicated columns (columns that have exact same values)</span>
+
+        <span class="c1"># Remove duplicated columns (columns that have exact same values)</span>
         <span class="n">X_T</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span>
-        <span class="n">unique_features</span> <span class="o">=</span> <span class="n">X_T</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">keep</span><span class="o">=</span><span class="s1">'first'</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+        <span class="n">unique_features</span> <span class="o">=</span> <span class="n">X_T</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">keep</span><span class="o">=</span><span class="s2">"first"</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
         <span class="n">duplicated_features</span> <span class="o">=</span> <span class="p">[</span><span class="n">dup_col</span> <span class="k">for</span> <span class="n">dup_col</span> <span class="ow">in</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">dup_col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_features</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
-        
+
         <span class="nb">print</span><span class="p">(</span><span class="s2">"Duplicated Features: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">duplicated_features</span><span class="p">))</span>
-        
+
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">duplicated_features</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
             <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">duplicated_features</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">features</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span></div>
-    
-<div class="viewcode-block" id="TrainingFeatures.transform"><a class="viewcode-back" href="../../api.html#featuregen.functionals.TrainingFeatures.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span><span class="n">with_target</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TrainingFeatures.transform"><a class="viewcode-back" href="../../api.html#featuregen.functionals.TrainingFeatures.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">with_target</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">"""</span>
-<span class="sd">        Transforming </span>
-<span class="sd">        </span>
+<span class="sd">        Transforming</span>
+
 <span class="sd">        :param X: Pandas DataFrame</span>
 <span class="sd">        """</span>
         <span class="k">if</span> <span class="n">with_target</span><span class="p">:</span>
             <span class="n">df</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-            <span class="n">df</span><span class="p">[</span><span class="s1">'target'</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]</span>
+            <span class="n">df</span><span class="p">[</span><span class="s2">"target"</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">]</span>
             <span class="n">df</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">date_col</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">date_col</span><span class="p">]</span>
             <span class="k">return</span> <span class="n">df</span>
-        
+
         <span class="k">return</span> <span class="n">X</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">]</span></div></div>
 </pre></div>
       </article>
@@ -266,7 +265,7 @@
         </div>
 
         <div class="related-information">
-              Copyright &#169; {date.today().year} Jitin Kapila
+              Copyright &#169; 2021 Jitin Kapila
         </div>
         
       </footer>

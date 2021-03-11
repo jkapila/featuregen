@@ -35,3 +35,6 @@ Depends On
 	pandas
     scikit-learn
 
+Eventually would drop dependency on scikit learn.
+
+A quick start would come soon.

@@ -25,7 +25,7 @@ Documentation As Is
     `issues board <https://github.com/jkapila/featuregen/issues>`_ 
 	
 	
-Full Table of Contents
+Table of Contents
 ======================
 
 .. toctree::
@@ -33,8 +33,6 @@ Full Table of Contents
 
    self
    installation
-   quick_start
    api
    license
-   version_history
    GitHub Repository <https://github.com/jkapila/featuregen>
