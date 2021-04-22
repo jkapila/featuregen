@@ -131,12 +131,12 @@ html_title = "FeatureGen"
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = "images/favicon.ico"
+# html_logo = "images/favicon.ico"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-html_favicon = 'favicon.ico'
+# html_favicon = 'favicon.ico'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -246,11 +246,11 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 
-  'featuregen', 
+  ('index',
+  'featuregen',
   u'featuregen Documentation',
-  u'Jitin Kapila', 
-  'featuregen', 
+  u'Jitin Kapila',
+  'featuregen',
   'Generating Features for Forecasting',
   'Miscellaneous'),
 ]

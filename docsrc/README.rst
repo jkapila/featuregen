@@ -23,7 +23,7 @@ Feature Generator: A package for Features Gneration
 
 .. context-begin
 
-The package is built on Pure python using most basic libraries: numpy, pandas, scipy and scikit-learn. Would eventually drop dependency on scikit learn.
+The package is built on Pure python using most basic libraries: numpy, pandas, scipy and scikit-learn.
 
 .. context-end
 

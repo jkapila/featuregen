@@ -36,16 +36,12 @@ repos:
     hooks:
       - id: check-added-large-files
 
-  - repo: local
+  - repo: https://github.com/shanepan/pre-commit-sphinx
+    rev: 0.0.1
     hooks:
-      - id: sphinx-build
-        name: sphinx build
-        entry: python -m sphinx.cmd.build
-        args: [-W, -b, html ,-d docsrc/doctrees, docsrc/, docs/]
-        language: system
-        files: ^docsrc/
-        types: [file]
-        pass_filenames: false
+      - id: build-docs
+        args: ['--cache-dir', 'docsrc/doctrees', '--html-dir', 'docs', '--source-dir', 'docsrc']
+        language_version: python3
 
   - repo: https://github.com/windpioneers/pre-commit-hooks
     rev: 0.0.5

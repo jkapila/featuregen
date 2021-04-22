@@ -22,9 +22,9 @@ Documentation As Is
 .. important::
     This library is in very early stages. Like the idea of it? Please
     `star us on GitHub <https://github.com/jkapila/featuregen>`_ and contribute via the
-    `issues board <https://github.com/jkapila/featuregen/issues>`_ 
-	
-	
+    `issues board <https://github.com/jkapila/featuregen/issues>`_
+
+
 Table of Contents
 ======================
 

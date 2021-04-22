@@ -21,7 +21,8 @@ class CartesianProduct(BaseEstimator, TransformerMixin):
         lb = len(right)
         ia2, ib2 = np.broadcast_arrays(*np.ogrid[:la, :lb])
         columns = left.columns.tolist() + right.columns.tolist()
-        df = pd.DataFrame(np.column_stack([left.values[ia2.ravel()], right.values[ib2.ravel()]]), columns=columns)
+        df = pd.DataFrame(np.column_stack([left.values[ia2.ravel()],
+                        right.values[ib2.ravel()]]), columns=columns)
         df = df.astype(dtypes)
         return df
 
