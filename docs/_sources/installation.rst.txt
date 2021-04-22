@@ -9,32 +9,24 @@ A simple ``pip install`` should work.
 
 .. code:: none
 
-    pip install featuregen
+    pip install pip install git+https://github.com/jkapila/featuregen.git
 
-Ideally nothing should break, but its good to create a virtual env for the use.
+Ideally nothing should break, but its good to create a virtual env or ``pyenv``.
 
-You probably should! ``pyenv`` is your friend. Google it.
+This is currently very much work in progress and is likely to change a lottt, over period of time.
 
-
-.. _compilation:
-
-Compilation
-============
-
-There is presently no need to compile **featuregen**, as it's written entirely in python.
 
 .. _dependson:
 
 Depends On
 ============
 
-.. code:: py
-	
-	numpy 
+Current dependency:
+
+.. code:: bash
+
+	numpy
 	scipy
 	pandas
-    scikit-learn
+	scikit-learn
 
-Eventually would drop dependency on scikit learn.
-
-A quick start would come soon.

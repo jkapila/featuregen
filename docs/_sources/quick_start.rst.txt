@@ -9,19 +9,17 @@ Quick Start
 Just to quick start things
 ==========================
 
-To Use A
-
-.. code:: javascript
-
-   {
-	   "title": "My first atomising discombobulator",
-	   "description": "A simple example... estimates the `foz` value of an atomising discombobulator."
-   }
-
-
-To Use B
+To use library
 
 .. code:: py
 
-   mgp = MovieGenreProcess()
-   mgp.fit(docs)
+
+   import pandas as pd
+   from featuregen import GroupedVariableTransformation
+
+   df = pd.DataFrame({'attribute':['A','A','A','A','A','A','B','B','B','B','B','B'],
+                      'value':[1,2,4,5,3,6,100,33,44,77,77,99]})
+   gvt = GroupedVariableTransformation(key='attribute',target='value')
+   gvt.fit(df)
+   print(gvt)
+   gvt.transform(df)

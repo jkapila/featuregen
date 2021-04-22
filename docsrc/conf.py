@@ -36,10 +36,10 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
-	'sphinx.ext.githubpages',
+	  'sphinx.ext.githubpages',
 	# Some more good feeling extentions
-	"sphinx_copybutton",
-    "sphinx_inline_tabs",
+	  'sphinx_copybutton',
+    'sphinx_inline_tabs',
 	#'sphinx_tabs.tabs'
 ]
 

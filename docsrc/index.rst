@@ -34,5 +34,6 @@ Table of Contents
    self
    installation
    api
+   quick_start
    license
    GitHub Repository <https://github.com/jkapila/featuregen>
