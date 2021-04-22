@@ -9,9 +9,9 @@ FeatureGen
    :end-before: teaser-end
 
 
+
 Documentation As Is
 ===================
-
 
 .. include:: README.rst
    :start-after: context-begin
@@ -29,11 +29,11 @@ Table of Contents
 ======================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    self
    installation
-   api
+   api/index
    quick_start
    license
    GitHub Repository <https://github.com/jkapila/featuregen>

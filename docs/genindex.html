@@ -111,7 +111,14 @@
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">FeatureGen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api/index.html">Building Blocks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/aggregation.html">Feature Aggregations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/timebased.html">Time Based Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/transformation.html">Variable Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/metric.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/functionals.html">Helper Functions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start.html">Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/jkapila/featuregen">GitHub Repository</a></li>
@@ -132,8 +139,180 @@
         
 <section class="genindex-section">
   <h1 id="index">Index</h1>
-  <div class="genindex-jumpbox"></div>
+  <div class="genindex-jumpbox"><a href="#A"><strong>A</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a></div>
 </section>
+<section id="A" class="genindex-section">
+  <h2>A</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/aggregation.html#featuregen.aggregates.AggregateFeatures">AggregateFeatures (class in featuregen.aggregates)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="C" class="genindex-section">
+  <h2>C</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/timebased.html#featuregen.time_features.CalendarFeatures">CalendarFeatures (class in featuregen.time_features)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/functionals.html#featuregen.functionals.CartesianProduct">CartesianProduct (class in featuregen.functionals)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="F" class="genindex-section">
+  <h2>F</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/aggregation.html#featuregen.aggregates.AggregateFeatures.fit">fit() (featuregen.aggregates.AggregateFeatures method)</a>
+
+        <ul>
+          <li><a href="api/aggregation.html#featuregen.aggregates.SubLevelFeatures.fit">(featuregen.aggregates.SubLevelFeatures method)</a>
+</li>
+          <li><a href="api/functionals.html#featuregen.functionals.CartesianProduct.fit">(featuregen.functionals.CartesianProduct method)</a>
+</li>
+          <li><a href="api/functionals.html#featuregen.functionals.TrainingFeatures.fit">(featuregen.functionals.TrainingFeatures method)</a>
+</li>
+          <li><a href="api/timebased.html#featuregen.time_features.CalendarFeatures.fit">(featuregen.time_features.CalendarFeatures method)</a>
+</li>
+          <li><a href="api/timebased.html#featuregen.time_features.HolidayAndEventFeatures.fit">(featuregen.time_features.HolidayAndEventFeatures method)</a>
+</li>
+          <li><a href="api/timebased.html#featuregen.time_features.LagFeatures.fit">(featuregen.time_features.LagFeatures method)</a>
+</li>
+          <li><a href="api/transformation.html#featuregen.variables.GroupedVariableTransformation.fit">(featuregen.variables.GroupedVariableTransformation method)</a>
+</li>
+          <li><a href="api/transformation.html#featuregen.variables.IndexMapper.fit">(featuregen.variables.IndexMapper method)</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="G" class="genindex-section">
+  <h2>G</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/transformation.html#featuregen.variables.IndexMapper.get_all_index">get_all_index() (featuregen.variables.IndexMapper method)</a>
+</li>
+        <li><a href="api/transformation.html#featuregen.variables.IndexMapper.get_all_names">get_all_names() (featuregen.variables.IndexMapper method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/transformation.html#featuregen.variables.IndexMapper.get_index">get_index() (featuregen.variables.IndexMapper method)</a>
+</li>
+        <li><a href="api/transformation.html#featuregen.variables.IndexMapper.get_name">get_name() (featuregen.variables.IndexMapper method)</a>
+</li>
+        <li><a href="api/transformation.html#featuregen.variables.GroupedVariableTransformation">GroupedVariableTransformation (class in featuregen.variables)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="H" class="genindex-section">
+  <h2>H</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/timebased.html#featuregen.time_features.HolidayAndEventFeatures">HolidayAndEventFeatures (class in featuregen.time_features)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="I" class="genindex-section">
+  <h2>I</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/transformation.html#featuregen.variables.IndexMapper">IndexMapper (class in featuregen.variables)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/transformation.html#featuregen.variables.GroupedVariableTransformation.inverse_transform">inverse_transform() (featuregen.variables.GroupedVariableTransformation method)</a>
+
+        <ul>
+          <li><a href="api/transformation.html#featuregen.variables.IndexMapper.inverse_transform">(featuregen.variables.IndexMapper method)</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="L" class="genindex-section">
+  <h2>L</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/timebased.html#featuregen.time_features.LagFeatures">LagFeatures (class in featuregen.time_features)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="M" class="genindex-section">
+  <h2>M</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/metric.html#featuregen.metrics.SummarizeRegression.measure">measure() (featuregen.metrics.SummarizeRegression method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="S" class="genindex-section">
+  <h2>S</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/aggregation.html#featuregen.aggregates.SubLevelFeatures">SubLevelFeatures (class in featuregen.aggregates)</a>
+</li>
+        <li><a href="api/metric.html#featuregen.metrics.SummarizeRegression.summarize">summarize() (featuregen.metrics.SummarizeRegression method)</a>
+</li>
+        <li><a href="api/metric.html#featuregen.metrics.SummarizeRegression.summarize_date">summarize_date() (featuregen.metrics.SummarizeRegression method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/metric.html#featuregen.metrics.SummarizeRegression.summarize_key">summarize_key() (featuregen.metrics.SummarizeRegression method)</a>
+</li>
+        <li><a href="api/metric.html#featuregen.metrics.SummarizeRegression.summarize_overall">summarize_overall() (featuregen.metrics.SummarizeRegression method)</a>
+</li>
+        <li><a href="api/metric.html#featuregen.metrics.SummarizeRegression">SummarizeRegression (class in featuregen.metrics)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="T" class="genindex-section">
+  <h2>T</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="api/functionals.html#featuregen.functionals.TrainingFeatures">TrainingFeatures (class in featuregen.functionals)</a>
+</li>
+        <li><a href="api/aggregation.html#featuregen.aggregates.AggregateFeatures.transform">transform() (featuregen.aggregates.AggregateFeatures method)</a>
+
+        <ul>
+          <li><a href="api/aggregation.html#featuregen.aggregates.SubLevelFeatures.transform">(featuregen.aggregates.SubLevelFeatures method)</a>
+</li>
+          <li><a href="api/functionals.html#featuregen.functionals.CartesianProduct.transform">(featuregen.functionals.CartesianProduct method)</a>
+</li>
+          <li><a href="api/functionals.html#featuregen.functionals.TrainingFeatures.transform">(featuregen.functionals.TrainingFeatures method)</a>
+</li>
+          <li><a href="api/timebased.html#featuregen.time_features.CalendarFeatures.transform">(featuregen.time_features.CalendarFeatures method)</a>
+</li>
+          <li><a href="api/timebased.html#featuregen.time_features.HolidayAndEventFeatures.transform">(featuregen.time_features.HolidayAndEventFeatures method)</a>
+</li>
+          <li><a href="api/timebased.html#featuregen.time_features.LagFeatures.transform">(featuregen.time_features.LagFeatures method)</a>
+</li>
+          <li><a href="api/transformation.html#featuregen.variables.GroupedVariableTransformation.transform">(featuregen.variables.GroupedVariableTransformation method)</a>
+</li>
+          <li><a href="api/transformation.html#featuregen.variables.IndexMapper.transform">(featuregen.variables.IndexMapper method)</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
 
       </article>
       <footer>
