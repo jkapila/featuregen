@@ -29,11 +29,12 @@ Table of Contents
 ======================
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    self
    installation
    api/index
    quick_start
+   example_gallery/index
    license
    GitHub Repository <https://github.com/jkapila/featuregen>

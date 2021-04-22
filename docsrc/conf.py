@@ -13,6 +13,7 @@
 import os
 import sys
 from datetime import date
+from sphinx_gallery.sorting import FileNameSortKey
 #import sphinx_rtd_theme
 #import furo
 
@@ -37,6 +38,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
 	  'sphinx.ext.githubpages',
+	  'sphinx_gallery.gen_gallery',
 	# Some more good feeling extentions
 	  'sphinx_copybutton',
     'sphinx_inline_tabs',
@@ -186,6 +188,28 @@ html_show_copyright = True
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'featuregenDoc'
+
+
+# -- Sphinx Galery Support ------------------------------------------
+# sphinx-gallery configuration
+sphinx_gallery_conf = {
+    # path to your example scripts
+    'examples_dirs': ['../examples'],
+    # path to where to save gallery generated output
+    'gallery_dirs': ['example_gallery'],
+    # specify that examples should be ordered according to filename
+    'within_subsection_order': FileNameSortKey,
+    # directory where function granular galleries are stored
+    'backreferences_dir': 'gen_modules/backreferences',
+    # running examples
+    'plot_gallery': 'True',
+    # linenumbers
+    'line_numbers': True,
+    # more behaviours
+    'capture_repr': ('_repr_html_', '__repr__'),
+    'thumbnail_size': (250, 150),
+    'show_memory': True
+   }
 
 # -- Options for LaTeX output --------------------------------------------------
 
