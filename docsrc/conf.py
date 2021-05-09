@@ -208,7 +208,7 @@ sphinx_gallery_conf = {
     # more behaviours
     'capture_repr': ('_repr_html_', '__repr__'),
     'thumbnail_size': (250, 150),
-    'show_memory': True
+    'show_memory': False
    }
 
 # -- Options for LaTeX output --------------------------------------------------

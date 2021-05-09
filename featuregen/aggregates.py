@@ -8,7 +8,7 @@ from sklearn.base import BaseEstimator, TransformerMixin, clone
 from .utils import check_values_in_array
 
 
-class AggregateFeatures(BaseEstimator, TransformerMixin):
+class AggregateFeatures(object):
 
     """
 

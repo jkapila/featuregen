@@ -39,6 +39,10 @@
   }
 </style><link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
     <link rel="stylesheet" href="../../_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
   <body dir="">
     
@@ -112,8 +116,19 @@
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">FeatureGen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Documentation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/index.html">Building Blocks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/aggregation.html">Feature Aggregations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/timebased.html">Time Based Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/transformation.html">Variable Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/metric.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/functionals.html">Helper Functions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../example_gallery/index.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../example_gallery/plot_grouped_transformation.html">Grouped Varaible Transformation Example</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/jkapila/featuregen">GitHub Repository</a></li>
 </ul>
@@ -141,7 +156,7 @@
 <span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">check_values_in_array</span>
 
 
-<div class="viewcode-block" id="AggregateFeatures"><a class="viewcode-back" href="../../api.html#featuregen.aggregates.AggregateFeatures">[docs]</a><span class="k">class</span> <span class="nc">AggregateFeatures</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
+<div class="viewcode-block" id="AggregateFeatures"><a class="viewcode-back" href="../../api_old.html#featuregen.aggregates.AggregateFeatures">[docs]</a><span class="k">class</span> <span class="nc">AggregateFeatures</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
     <span class="sd">"""</span>
 
@@ -285,7 +300,7 @@
 
         <span class="k">return</span> <span class="n">agg</span><span class="p">,</span> <span class="n">var_name</span>
 
-<div class="viewcode-block" id="AggregateFeatures.fit"><a class="viewcode-back" href="../../api.html#featuregen.aggregates.AggregateFeatures.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="AggregateFeatures.fit"><a class="viewcode-back" href="../../api_old.html#featuregen.aggregates.AggregateFeatures.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">"""</span>
 
 <span class="sd">        Assumption before fetching data in fit:</span>
@@ -324,7 +339,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">features</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="AggregateFeatures.transform"><a class="viewcode-back" href="../../api.html#featuregen.aggregates.AggregateFeatures.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">flag</span><span class="o">=</span><span class="s2">"predict"</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="AggregateFeatures.transform"><a class="viewcode-back" href="../../api_old.html#featuregen.aggregates.AggregateFeatures.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">flag</span><span class="o">=</span><span class="s2">"predict"</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">"""</span>
 <span class="sd">        Transforming</span>
 
@@ -345,7 +360,7 @@
 
 
 <span class="c1"># Features which are smaller thatn the key but are not directly mapped in data</span>
-<div class="viewcode-block" id="SubLevelFeatures"><a class="viewcode-back" href="../../api.html#featuregen.aggregates.SubLevelFeatures">[docs]</a><span class="k">class</span> <span class="nc">SubLevelFeatures</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
+<div class="viewcode-block" id="SubLevelFeatures"><a class="viewcode-back" href="../../api_old.html#featuregen.aggregates.SubLevelFeatures">[docs]</a><span class="k">class</span> <span class="nc">SubLevelFeatures</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
 
     <span class="sd">"""</span>
 
@@ -408,7 +423,7 @@
         <span class="p">]</span>
         <span class="k">return</span> <span class="n">df_pct</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 
-<div class="viewcode-block" id="SubLevelFeatures.fit"><a class="viewcode-back" href="../../api.html#featuregen.aggregates.SubLevelFeatures.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SubLevelFeatures.fit"><a class="viewcode-back" href="../../api_old.html#featuregen.aggregates.SubLevelFeatures.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 
         <span class="sd">"""</span>
 <span class="sd">        :param X: Pandas DataFrame</span>
@@ -442,7 +457,7 @@
 
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="SubLevelFeatures.transform"><a class="viewcode-back" href="../../api.html#featuregen.aggregates.SubLevelFeatures.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">flag</span><span class="o">=</span><span class="s2">"predict"</span><span class="p">):</span>
+<div class="viewcode-block" id="SubLevelFeatures.transform"><a class="viewcode-back" href="../../api_old.html#featuregen.aggregates.SubLevelFeatures.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">flag</span><span class="o">=</span><span class="s2">"predict"</span><span class="p">):</span>
         <span class="sd">"""</span>
 <span class="sd">        Transforming</span>
 

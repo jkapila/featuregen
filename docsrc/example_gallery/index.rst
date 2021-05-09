@@ -16,17 +16,16 @@ FeatuerGen is a package to build the features on ther main criteria:
 
 
 
-
 .. raw:: html
 
     <div class="sphx-glr-thumbcontainer" tooltip="A group wise behaviour is very common in panel data. Now making transofmration on whole from on...">
 
 .. only:: html
 
- .. figure:: /example_gallery/images/thumb/sphx_glr_grouped_transformatio_thumb.png
+ .. figure:: /example_gallery/images/thumb/sphx_glr_plot_grouped_transformation_thumb.png
      :alt: Grouped Varaible Transformation Example
 
-     :ref:`sphx_glr_example_gallery_grouped_transformatio.py`
+     :ref:`sphx_glr_example_gallery_plot_grouped_transformation.py`
 
 .. raw:: html
 
@@ -36,7 +35,7 @@ FeatuerGen is a package to build the features on ther main criteria:
 .. toctree::
    :hidden:
 
-   /example_gallery/grouped_transformatio
+   /example_gallery/plot_grouped_transformation
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

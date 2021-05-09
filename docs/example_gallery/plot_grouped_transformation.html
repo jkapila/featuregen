@@ -147,58 +147,147 @@
         </label>
         <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
-<p>Click <a class="reference internal" href="#sphx-glr-download-example-gallery-grouped-transformatio-py"><span class="std std-ref">here</span></a>
+<p>Click <a class="reference internal" href="#sphx-glr-download-example-gallery-plot-grouped-transformation-py"><span class="std std-ref">here</span></a>
 to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="grouped-varaible-transformation-example">
-<span id="sphx-glr-example-gallery-grouped-transformatio-py"></span><h1>Grouped Varaible Transformation Example<a class="headerlink" href="#grouped-varaible-transformation-example" title="Permalink to this headline">¶</a></h1>
+<span id="sphx-glr-example-gallery-plot-grouped-transformation-py"></span><h1>Grouped Varaible Transformation Example<a class="headerlink" href="#grouped-varaible-transformation-example" title="Permalink to this headline">¶</a></h1>
 <p>A group wise behaviour is very common in panel data. Now making transofmration on
 whole from one prespectives would not be ideal and may cause more harm than solving the
 scaling problem.</p>
 <p>To keep the consistency of the transformation within groups GroupedVariableTransformation
 can be used. Following is very minimilatic example of the same.</p>
 <div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+ <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
  <span class="kn">from</span> <span class="nn">featuregen</span> <span class="kn">import</span> <span class="n">GroupedVariableTransformation</span>
+
+ <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'seaborn-white'</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div></div>
 <p>Creating a grouped data set with range differnece in values</p>
-<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'attribute'</span><span class="p">:[</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'B'</span><span class="p">,</span><span class="s1">'B'</span><span class="p">,</span><span class="s1">'B'</span><span class="p">,</span><span class="s1">'B'</span><span class="p">,</span><span class="s1">'B'</span><span class="p">,</span><span class="s1">'B'</span><span class="p">],</span>
-                    <span class="s1">'value'</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">99</span><span class="p">]})</span>
+<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+     <span class="p">{</span>
+         <span class="s2">"attribute"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">],</span>
+         <span class="s2">"value"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">99</span><span class="p">],</span>
+     <span class="p">}</span>
+ <span class="p">)</span>
  <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div></div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>   attribute  value
+0          A      1
+1          A      2
+2          A      4
+3          A      5
+4          A      3
+5          A      6
+6          B    100
+7          B     33
+8          B     44
+9          B     77
+10         B     77
+11         B     99
+</pre></div>
+</div>
 <p>Instantiating model calss with relevtant attributes</p>
-<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">26</span>
-<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">gvt</span> <span class="o">=</span> <span class="n">GroupedVariableTransformation</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s1">'attribute'</span><span class="p">,</span><span class="n">target</span><span class="o">=</span><span class="s1">'value'</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">gvt</span> <span class="o">=</span> <span class="n">GroupedVariableTransformation</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">"attribute"</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s2">"value"</span><span class="p">)</span>
  <span class="nb">print</span><span class="p">(</span><span class="n">gvt</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div></div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Variable Transformer (key=attribute, target=value, strategy=zscore)
+</pre></div>
+</div>
 <p>Fitting our grouped data in transformer</p>
-<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">31</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">gvt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">37</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">gvt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div></div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Variable Transformer (key=attribute, target=value, strategy=zscore)
+</pre></div>
+</div>
 <p>Transforming data toe scale with zscore strategy</p>
-<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">35</span>
-<span class="normal">36</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">df_tr</span> <span class="o">=</span> <span class="n">gvt</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
- <span class="nb">print</span><span class="p">(</span><span class="n">df_tr</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">41</span>
+<span class="normal">42</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">df</span><span class="p">[</span><span class="s1">'value_tr'</span><span class="p">]</span> <span class="o">=</span> <span class="n">gvt</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+ <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div></div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>   attribute  value  value_tr
+0          A      1 -1.463850
+1          A      2 -0.878310
+2          A      4  0.292770
+3          A      5  0.878310
+4          A      3 -0.292770
+5          A      6  1.463850
+6          B    100  1.116008
+7          B     33 -1.523023
+8          B     44 -1.089749
+9          B     77  0.210072
+10         B     77  0.210072
+11         B     99  1.076620
+</pre></div>
+</div>
 <p>Inverse transforming the  data back based on groupwise learned scale.</p>
-<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">40</span>
-<span class="normal">41</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">df_inv</span> <span class="o">=</span> <span class="n">gvt</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">df_tr</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">46</span>
+<span class="normal">47</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">df_inv</span> <span class="o">=</span> <span class="n">gvt</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">target</span><span class="o">=</span><span class="s1">'value_tr'</span><span class="p">)</span>
  <span class="nb">print</span><span class="p">(</span><span class="n">df_inv</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div></div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-example-gallery-grouped-transformatio-py">
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>0       1.0
+1       2.0
+2       4.0
+3       5.0
+4       3.0
+5       6.0
+6     100.0
+7      33.0
+8      44.0
+9      77.0
+10     77.0
+11     99.0
+dtype: float64
+</pre></div>
+</div>
+<p>Validate values are same
+np.allclose(df[‘value’].values,df_inv[‘value’].values)</p>
+<p>Lets see how does the variable transformation looks within each group</p>
+<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">groups</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"attribute"</span><span class="p">)</span>
+ <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
+     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="s2">"value"</span><span class="p">],</span> <span class="n">group</span><span class="p">[</span><span class="s2">"value_tr"</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"o"</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'lower right'</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div></div>
+<img alt="plot grouped transformation" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_grouped_transformation_001.png"/>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f2b74832ad0&gt;
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.770 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-example-gallery-plot-grouped-transformation-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
-<p><a class="reference download internal" download="" href="../_downloads/ed180c2e79a682245c285dcc1e0bfdd0/grouped_transformatio.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">grouped_transformatio.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../_downloads/459eda98df11b8c4f77d424efd87abf4/plot_grouped_transformation.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_grouped_transformation.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
-<p><a class="reference download internal" download="" href="../_downloads/4f6238ad8f2f616768f9c5316ea6d2c1/grouped_transformatio.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">grouped_transformatio.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../_downloads/25c492b0f8d781692d87096d2457b709/plot_grouped_transformation.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_grouped_transformation.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
