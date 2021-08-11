@@ -37,10 +37,11 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
-	  'sphinx.ext.githubpages',
-	  'sphinx_gallery.gen_gallery',
-	# Some more good feeling extentions
-	  'sphinx_copybutton',
+    'sphinx.ext.githubpages',
+    # adding sphinx gallery to the show
+    'sphinx_gallery.gen_gallery',
+    # Some more good feeling extentions
+    'sphinx_copybutton',
     'sphinx_inline_tabs',
 	#'sphinx_tabs.tabs'
 ]

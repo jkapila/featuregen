@@ -22,7 +22,7 @@ deploy:
   skip_cleanup: true
   skip_existing: true
   edge: true
-  user: {{pypi_username}}
+  user: "jkapila"
   password:
     secure: "Use travis encrypt to turn your pypi deployment password to an encrypted key and place it here"
   on:

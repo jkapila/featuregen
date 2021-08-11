@@ -204,10 +204,10 @@ class IndexMapper(object):
 
     """
 
-    A multi column categorical labeller
+        A multi column categorical labeller
 
-:param categorical_columns: Columns to create Label for
-        :param verbose: Verbosity
+    :param categorical_columns: Columns to create Label for
+            :param verbose: Verbosity
     """
 
     def __init__(self, categorical_columns, verbose=False):

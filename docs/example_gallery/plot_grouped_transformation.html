@@ -162,22 +162,26 @@ can be used. Following is very minimilatic example of the same.</p>
 <span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
  <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+ <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
  <span class="kn">from</span> <span class="nn">featuregen</span> <span class="kn">import</span> <span class="n">GroupedVariableTransformation</span>
 
- <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
- <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'seaborn-white'</span><span class="p">)</span>
+
+ <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"seaborn-white"</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div></div>
 <p>Creating a grouped data set with range differnece in values</p>
-<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
+<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>
 <span class="normal">28</span>
-<span class="normal">29</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
      <span class="p">{</span>
          <span class="s2">"attribute"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">],</span>
          <span class="s2">"value"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">99</span><span class="p">],</span>
@@ -203,8 +207,8 @@ can be used. Following is very minimilatic example of the same.</p>
 </pre></div>
 </div>
 <p>Instantiating model calss with relevtant attributes</p>
-<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">32</span>
-<span class="normal">33</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">gvt</span> <span class="o">=</span> <span class="n">GroupedVariableTransformation</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">"attribute"</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s2">"value"</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">gvt</span> <span class="o">=</span> <span class="n">GroupedVariableTransformation</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">"attribute"</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s2">"value"</span><span class="p">)</span>
  <span class="nb">print</span><span class="p">(</span><span class="n">gvt</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div></div>
@@ -213,7 +217,7 @@ can be used. Following is very minimilatic example of the same.</p>
 </pre></div>
 </div>
 <p>Fitting our grouped data in transformer</p>
-<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">37</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">gvt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">39</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">gvt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div></div>
 <p class="sphx-glr-script-out">Out:</p>
@@ -221,8 +225,8 @@ can be used. Following is very minimilatic example of the same.</p>
 </pre></div>
 </div>
 <p>Transforming data toe scale with zscore strategy</p>
-<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">41</span>
-<span class="normal">42</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">df</span><span class="p">[</span><span class="s1">'value_tr'</span><span class="p">]</span> <span class="o">=</span> <span class="n">gvt</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">43</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">df</span><span class="p">[</span><span class="s2">"value_tr"</span><span class="p">]</span> <span class="o">=</span> <span class="n">gvt</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
  <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div></div>
@@ -243,8 +247,8 @@ can be used. Following is very minimilatic example of the same.</p>
 </pre></div>
 </div>
 <p>Inverse transforming the  data back based on groupwise learned scale.</p>
-<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">46</span>
-<span class="normal">47</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">df_inv</span> <span class="o">=</span> <span class="n">gvt</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">target</span><span class="o">=</span><span class="s1">'value_tr'</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">48</span>
+<span class="normal">49</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">df_inv</span> <span class="o">=</span> <span class="n">gvt</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s2">"value_tr"</span><span class="p">)</span>
  <span class="nb">print</span><span class="p">(</span><span class="n">df_inv</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div></div>
@@ -267,21 +271,21 @@ dtype: float64
 <p>Validate values are same
 np.allclose(df[‘value’].values,df_inv[‘value’].values)</p>
 <p>Lets see how does the variable transformation looks within each group</p>
-<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">groups</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"attribute"</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">groups</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"attribute"</span><span class="p">)</span>
  <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
      <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="s2">"value"</span><span class="p">],</span> <span class="n">group</span><span class="p">[</span><span class="s2">"value_tr"</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"o"</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
- <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'lower right'</span><span class="p">)</span>
+ <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"lower right"</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div></div>
 <img alt="plot grouped transformation" class="sphx-glr-single-img" src="../_images/sphx_glr_plot_grouped_transformation_001.png"/>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7f2b74832ad0&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7fa143541e10&gt;
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.770 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.091 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-example-gallery-plot-grouped-transformation-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/459eda98df11b8c4f77d424efd87abf4/plot_grouped_transformation.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_grouped_transformation.py</span></code></a></p>

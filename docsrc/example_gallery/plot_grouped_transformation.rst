@@ -28,19 +28,21 @@ scaling problem.
 To keep the consistency of the transformation within groups GroupedVariableTransformation
 can be used. Following is very minimilatic example of the same.
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-21
+.. GENERATED FROM PYTHON SOURCE LINES 13-23
 
 .. code-block:: default
    :lineno-start: 15
 
 
 
-    import pandas as pd
+    import matplotlib.pyplot as plt
     import numpy as np
+    import pandas as pd
+
     from featuregen import GroupedVariableTransformation
 
-    import matplotlib.pyplot as plt
-    plt.style.use('seaborn-white')
+
+    plt.style.use("seaborn-white")
 
 
 
@@ -48,14 +50,14 @@ can be used. Following is very minimilatic example of the same.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-23
+.. GENERATED FROM PYTHON SOURCE LINES 24-25
 
 Creating a grouped data set with range differnece in values
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-30
+.. GENERATED FROM PYTHON SOURCE LINES 25-32
 
 .. code-block:: default
-   :lineno-start: 23
+   :lineno-start: 25
 
     df = pd.DataFrame(
         {
@@ -91,14 +93,14 @@ Creating a grouped data set with range differnece in values
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-32
+.. GENERATED FROM PYTHON SOURCE LINES 33-34
 
 Instantiating model calss with relevtant attributes
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-35
+.. GENERATED FROM PYTHON SOURCE LINES 34-37
 
 .. code-block:: default
-   :lineno-start: 32
+   :lineno-start: 34
 
     gvt = GroupedVariableTransformation(key="attribute", target="value")
     print(gvt)
@@ -118,14 +120,14 @@ Instantiating model calss with relevtant attributes
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-37
+.. GENERATED FROM PYTHON SOURCE LINES 38-39
 
 Fitting our grouped data in transformer
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-39
+.. GENERATED FROM PYTHON SOURCE LINES 39-41
 
 .. code-block:: default
-   :lineno-start: 37
+   :lineno-start: 39
 
     gvt.fit(df)
 
@@ -144,16 +146,16 @@ Fitting our grouped data in transformer
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-41
+.. GENERATED FROM PYTHON SOURCE LINES 42-43
 
 Transforming data toe scale with zscore strategy
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-44
+.. GENERATED FROM PYTHON SOURCE LINES 43-46
 
 .. code-block:: default
-   :lineno-start: 41
+   :lineno-start: 43
 
-    df['value_tr'] = gvt.transform(df)
+    df["value_tr"] = gvt.transform(df)
     print(df)
 
 
@@ -183,16 +185,16 @@ Transforming data toe scale with zscore strategy
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-46
+.. GENERATED FROM PYTHON SOURCE LINES 47-48
 
 Inverse transforming the  data back based on groupwise learned scale.
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-49
+.. GENERATED FROM PYTHON SOURCE LINES 48-51
 
 .. code-block:: default
-   :lineno-start: 46
+   :lineno-start: 48
 
-    df_inv = gvt.inverse_transform(df,target='value_tr')
+    df_inv = gvt.inverse_transform(df, target="value_tr")
     print(df_inv)
 
 
@@ -222,25 +224,24 @@ Inverse transforming the  data back based on groupwise learned scale.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-52
+.. GENERATED FROM PYTHON SOURCE LINES 52-54
 
 Validate values are same
 np.allclose(df['value'].values,df_inv['value'].values)
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-55
+.. GENERATED FROM PYTHON SOURCE LINES 56-57
 
 Lets see how does the variable transformation looks within each group
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-60
+.. GENERATED FROM PYTHON SOURCE LINES 57-61
 
 .. code-block:: default
-   :lineno-start: 55
+   :lineno-start: 57
 
     groups = df.groupby("attribute")
     for name, group in groups:
         plt.plot(group["value"], group["value_tr"], marker="o", linestyle="", label=name)
-    plt.legend(loc='lower right')
-
+    plt.legend(loc="lower right")
 
 
 
@@ -256,14 +257,14 @@ Lets see how does the variable transformation looks within each group
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f2b74832ad0>
+    <matplotlib.legend.Legend object at 0x7fa143541e10>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.770 seconds)
+   **Total running time of the script:** ( 0 minutes  7.091 seconds)
 
 
 .. _sphx_glr_download_example_gallery_plot_grouped_transformation.py:

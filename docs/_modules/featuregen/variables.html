@@ -39,6 +39,10 @@
   }
 </style><link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
     <link rel="stylesheet" href="../../_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
   <body dir="">
     
@@ -112,8 +116,19 @@
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">FeatureGen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Documentation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/index.html">Building Blocks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/aggregation.html">Feature Aggregations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/timebased.html">Time Based Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/transformation.html">Variable Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/metric.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/functionals.html">Helper Functions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../example_gallery/index.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../example_gallery/plot_grouped_transformation.html">Grouped Varaible Transformation Example</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/jkapila/featuregen">GitHub Repository</a></li>
 </ul>
@@ -136,7 +151,7 @@
 
 
 <span class="c1">## Grouped Variable Transformation to transform data in various groups</span>
-<div class="viewcode-block" id="GroupedVariableTransformation"><a class="viewcode-back" href="../../api.html#featuregen.variables.GroupedVariableTransformation">[docs]</a><span class="k">class</span> <span class="nc">GroupedVariableTransformation</span><span class="p">:</span>
+<div class="viewcode-block" id="GroupedVariableTransformation"><a class="viewcode-back" href="../../api_old.html#featuregen.variables.GroupedVariableTransformation">[docs]</a><span class="k">class</span> <span class="nc">GroupedVariableTransformation</span><span class="p">:</span>
     <span class="sd">"""</span>
 
 <span class="sd">    Variable Transformation at group level</span>
@@ -183,7 +198,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">summary_func</span> <span class="o">=</span> <span class="n">summary_func</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">grps</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="GroupedVariableTransformation.fit"><a class="viewcode-back" href="../../api.html#featuregen.variables.GroupedVariableTransformation.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
+<div class="viewcode-block" id="GroupedVariableTransformation.fit"><a class="viewcode-back" href="../../api_old.html#featuregen.variables.GroupedVariableTransformation.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
         <span class="sd">"""</span>
 <span class="sd">        Fitting</span>
 
@@ -197,7 +212,7 @@
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">"Variable Transformer (key=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="si">}</span><span class="s2">, target=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="si">}</span><span class="s2">, strategy=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">strategy</span><span class="si">}</span><span class="s2">)"</span>
 
-<div class="viewcode-block" id="GroupedVariableTransformation.transform"><a class="viewcode-back" href="../../api.html#featuregen.variables.GroupedVariableTransformation.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
+<div class="viewcode-block" id="GroupedVariableTransformation.transform"><a class="viewcode-back" href="../../api_old.html#featuregen.variables.GroupedVariableTransformation.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
         <span class="sd">"""</span>
 <span class="sd">        Transforming</span>
 
@@ -268,7 +283,7 @@
 
         <span class="k">return</span> <span class="n">X</span></div>
 
-    <span class="k">def</span> <span class="nf">inverse_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="GroupedVariableTransformation.inverse_transform"><a class="viewcode-back" href="../../api/transformation.html#featuregen.variables.GroupedVariableTransformation.inverse_transform">[docs]</a>    <span class="k">def</span> <span class="nf">inverse_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 
         <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span>
@@ -323,7 +338,7 @@
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">==</span> <span class="s2">"custom"</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">custom_func</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">target</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">custom_func</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">grps</span><span class="p">,</span> <span class="n">inverse</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">X</span></div>
+        <span class="k">return</span> <span class="n">X</span></div></div>
 
 
 <span class="c1">## todo: Trended variable transformation the means and all would be treand at level of granularity of</span>
@@ -333,14 +348,14 @@
 
 
 <span class="c1">## Multiple label Encoding with easy transforms</span>
-<div class="viewcode-block" id="IndexMapper"><a class="viewcode-back" href="../../api.html#featuregen.variables.IndexMapper">[docs]</a><span class="k">class</span> <span class="nc">IndexMapper</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="IndexMapper"><a class="viewcode-back" href="../../api_old.html#featuregen.variables.IndexMapper">[docs]</a><span class="k">class</span> <span class="nc">IndexMapper</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
     <span class="sd">"""</span>
 
-<span class="sd">    A multi column categorical labeller</span>
+<span class="sd">        A multi column categorical labeller</span>
 
-<span class="sd">:param categorical_columns: Columns to create Label for</span>
-<span class="sd">        :param verbose: Verbosity</span>
+<span class="sd">    :param categorical_columns: Columns to create Label for</span>
+<span class="sd">            :param verbose: Verbosity</span>
 <span class="sd">    """</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">categorical_columns</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -360,7 +375,7 @@
             <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">return</span> <span class="n">codes2idx</span><span class="p">,</span> <span class="n">idx2codes</span>
 
-<div class="viewcode-block" id="IndexMapper.fit"><a class="viewcode-back" href="../../api.html#featuregen.variables.IndexMapper.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="IndexMapper.fit"><a class="viewcode-back" href="../../api_old.html#featuregen.variables.IndexMapper.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">"""</span>
 <span class="sd">        Fitting</span>
 
@@ -375,7 +390,7 @@
                 <span class="nb">print</span><span class="p">(</span><span class="s2">"Creating mapping for :"</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_make_index</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="IndexMapper.transform"><a class="viewcode-back" href="../../api.html#featuregen.variables.IndexMapper.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="IndexMapper.transform"><a class="viewcode-back" href="../../api_old.html#featuregen.variables.IndexMapper.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">"""</span>
 <span class="sd">        Transforming</span>
 
@@ -395,7 +410,7 @@
 
         <span class="k">return</span> <span class="n">df</span> <span class="k">if</span> <span class="n">inplace</span> <span class="k">else</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">sub_df</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">inverse_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="IndexMapper.inverse_transform"><a class="viewcode-back" href="../../api/transformation.html#featuregen.variables.IndexMapper.inverse_transform">[docs]</a>    <span class="k">def</span> <span class="nf">inverse_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">inplace</span><span class="p">:</span>
             <span class="n">sub_df</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cat_cols</span><span class="p">:</span>
@@ -407,7 +422,7 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">sub_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_replace_index</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">col</span><span class="p">))</span>
 
-        <span class="k">return</span> <span class="n">df</span> <span class="k">if</span> <span class="n">inplace</span> <span class="k">else</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">sub_df</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">df</span> <span class="k">if</span> <span class="n">inplace</span> <span class="k">else</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">sub_df</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">_make_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
@@ -427,25 +442,25 @@
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">code</span>
 
-    <span class="k">def</span> <span class="nf">get_all_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<div class="viewcode-block" id="IndexMapper.get_all_names"><a class="viewcode-back" href="../../api/transformation.html#featuregen.variables.IndexMapper.get_all_names">[docs]</a>    <span class="k">def</span> <span class="nf">get_all_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"'</span><span class="si">{}</span><span class="s2">' not in indexed yet!"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s2">"codes"</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s2">"codes"</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span></div>
 
-    <span class="k">def</span> <span class="nf">get_all_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<div class="viewcode-block" id="IndexMapper.get_all_index"><a class="viewcode-back" href="../../api/transformation.html#featuregen.variables.IndexMapper.get_all_index">[docs]</a>    <span class="k">def</span> <span class="nf">get_all_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"'</span><span class="si">{}</span><span class="s2">' not in indexed yet!"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s2">"index"</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s2">"index"</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span></div>
 
-    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+<div class="viewcode-block" id="IndexMapper.get_name"><a class="viewcode-back" href="../../api/transformation.html#featuregen.variables.IndexMapper.get_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"'</span><span class="si">{}</span><span class="s2">' not in indexed yet!"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s2">"index"</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s2">"index"</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span></div>
 
-    <span class="k">def</span> <span class="nf">get_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="IndexMapper.get_index"><a class="viewcode-back" href="../../api/transformation.html#featuregen.variables.IndexMapper.get_index">[docs]</a>    <span class="k">def</span> <span class="nf">get_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"'</span><span class="si">{}</span><span class="s2">' not in indexed yet!"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s2">"codes"</span><span class="p">][</span><span class="n">value</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s2">"codes"</span><span class="p">][</span><span class="n">value</span><span class="p">]</span></div>
 
     <span class="k">def</span> <span class="nf">_replace_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">indexes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>

@@ -39,6 +39,10 @@
   }
 </style><link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/gallery-rendered-html.css" />
     <link rel="stylesheet" href="../../_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
   <body dir="">
     
@@ -112,8 +116,19 @@
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">FeatureGen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Documentation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/index.html">Building Blocks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/aggregation.html">Feature Aggregations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/timebased.html">Time Based Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/transformation.html">Variable Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/metric.html">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/functionals.html">Helper Functions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../quick_start.html">Quick Start</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../example_gallery/index.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../example_gallery/plot_grouped_transformation.html">Grouped Varaible Transformation Example</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/jkapila/featuregen">GitHub Repository</a></li>
 </ul>
@@ -137,7 +152,7 @@
 <span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">VarianceThreshold</span>
 
 
-<div class="viewcode-block" id="CartesianProduct"><a class="viewcode-back" href="../../api.html#featuregen.functionals.CartesianProduct">[docs]</a><span class="k">class</span> <span class="nc">CartesianProduct</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
+<div class="viewcode-block" id="CartesianProduct"><a class="viewcode-back" href="../../api_old.html#featuregen.functionals.CartesianProduct">[docs]</a><span class="k">class</span> <span class="nc">CartesianProduct</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
     <span class="sd">"""</span>
 
 <span class="sd">    Creating a Cartesian product for data</span>
@@ -154,12 +169,11 @@
         <span class="n">lb</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
         <span class="n">ia2</span><span class="p">,</span> <span class="n">ib2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_arrays</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ogrid</span><span class="p">[:</span><span class="n">la</span><span class="p">,</span> <span class="p">:</span><span class="n">lb</span><span class="p">])</span>
         <span class="n">columns</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">+</span> <span class="n">right</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">left</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">ia2</span><span class="o">.</span><span class="n">ravel</span><span class="p">()],</span>
-                        <span class="n">right</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">ib2</span><span class="o">.</span><span class="n">ravel</span><span class="p">()]]),</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">left</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">ia2</span><span class="o">.</span><span class="n">ravel</span><span class="p">()],</span> <span class="n">right</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">ib2</span><span class="o">.</span><span class="n">ravel</span><span class="p">()]]),</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
         <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtypes</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">df</span>
 
-<div class="viewcode-block" id="CartesianProduct.fit"><a class="viewcode-back" href="../../api.html#featuregen.functionals.CartesianProduct.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="CartesianProduct.fit"><a class="viewcode-back" href="../../api_old.html#featuregen.functionals.CartesianProduct.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 
         <span class="sd">"""</span>
 <span class="sd">        :param X: Pandas data frame to be used for cartesion</span>
@@ -171,7 +185,7 @@
 
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="CartesianProduct.transform"><a class="viewcode-back" href="../../api.html#featuregen.functionals.CartesianProduct.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">flag</span><span class="o">=</span><span class="s2">"predict"</span><span class="p">):</span>
+<div class="viewcode-block" id="CartesianProduct.transform"><a class="viewcode-back" href="../../api_old.html#featuregen.functionals.CartesianProduct.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">flag</span><span class="o">=</span><span class="s2">"predict"</span><span class="p">):</span>
         <span class="sd">"""</span>
 <span class="sd">        Transforming</span>
 
@@ -190,7 +204,7 @@
         <span class="k">return</span> <span class="n">df</span></div></div>
 
 
-<div class="viewcode-block" id="TrainingFeatures"><a class="viewcode-back" href="../../api.html#featuregen.functionals.TrainingFeatures">[docs]</a><span class="k">class</span> <span class="nc">TrainingFeatures</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
+<div class="viewcode-block" id="TrainingFeatures"><a class="viewcode-back" href="../../api_old.html#featuregen.functionals.TrainingFeatures">[docs]</a><span class="k">class</span> <span class="nc">TrainingFeatures</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
 
     <span class="sd">"""</span>
 
@@ -208,7 +222,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">date_col</span> <span class="o">=</span> <span class="n">date_col</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">drop_features</span> <span class="o">=</span> <span class="n">drop_features</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">drop_features</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">drop_features</span><span class="p">]</span>
 
-<div class="viewcode-block" id="TrainingFeatures.fit"><a class="viewcode-back" href="../../api.html#featuregen.functionals.TrainingFeatures.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+<div class="viewcode-block" id="TrainingFeatures.fit"><a class="viewcode-back" href="../../api_old.html#featuregen.functionals.TrainingFeatures.fit">[docs]</a>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
         <span class="sd">"""</span>
 <span class="sd">        Fitting</span>
 
@@ -240,7 +254,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">features</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="TrainingFeatures.transform"><a class="viewcode-back" href="../../api.html#featuregen.functionals.TrainingFeatures.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">with_target</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="TrainingFeatures.transform"><a class="viewcode-back" href="../../api_old.html#featuregen.functionals.TrainingFeatures.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">with_target</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">"""</span>
 <span class="sd">        Transforming</span>
 
